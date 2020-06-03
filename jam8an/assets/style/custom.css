@@ -177,20 +177,23 @@
     color: #fff;
 }
 .signin-ornament-top {
-    background-image: url("../img/ornament_top.png");
-    width: 209px;
-    height: 231px;
+    background: url("../img/ornament_top.png") no-repeat top right;
+    width: 278px;
+    height: 250px;
     position: absolute;
     top: 0;
     right: 0;
 }
 .signin-ornament-bottom {
-    background-image: url("../img/ornament_bottom.png");
+    background: url("../img/ornament_bottom.png") no-repeat bottom left;
     width: 146px;
     height: 160px;
     position: absolute;
     bottom: 0;
     left: 0;  
+}
+.signin-logo {
+    width: 215px;
 }
 
 /* ---- RESPONSIVE ----- */
@@ -213,5 +216,24 @@
     }
     .tbl-pagination .pagination {
         margin-top: 10px;
+    }
+
+    /* ----- Login ----- */
+    .bg-signin {
+        max-height: 100px;
+        overflow: hidden;
+    }
+    .signin-ornament-top {
+        background-size: 100%;
+        width: 85px;
+        height: 85px;
+    }
+    .signin-ornament-bottom {
+        background-size: 100%;
+        width: 60px;
+        height: 60px;
+    }
+    .signin-logo {
+        width: 160px;
     }
 }
