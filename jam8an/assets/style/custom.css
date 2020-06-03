@@ -250,6 +250,14 @@
     -webkit-box-shadow: 0 0 3px 0 rgba(82,63,105,.05);
     box-shadow: 0 0 3px 0 rgba(82,63,105,.05);
 }
+.layers-ribbon {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background: #e9edf1;
+    padding: 15px 20px;
+    border-radius: 0 0 8px 8px;
+}
 
 .main-content {
     min-height: 100vh !important;
