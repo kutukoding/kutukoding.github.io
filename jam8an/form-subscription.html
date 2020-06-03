@@ -59,12 +59,18 @@
         opacity: 0;
       }
     }
-
   </style>
-  
-<link href="assets/static/bundle/style/style.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="assets/style/custom.css" rel="stylesheet">
+
+  <link href="assets/static/bundle/style/style.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Datatable CSS -->
+  <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="assets/style/custom.css" rel="stylesheet">
 </head>
 
 <body class="app is-collapsed">
@@ -95,7 +101,6 @@
         loader.classList.add('fadeOut');
       }, 300);
     });
-
   </script>
 
   <!-- @App Content -->
@@ -420,7 +425,36 @@
       </footer>
     </div>
   </div>
-  <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script><script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
+  <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script>
+  <script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
+
+  <!-- Jquery Min JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <!-- Bootstrap Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- SweetAlert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!-- Custom Js -->
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.deleteRecord').click(function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!"
+        })
+      })
+    })
+  </script>
+
 </body>
 
 </html>

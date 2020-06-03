@@ -59,11 +59,17 @@
         opacity: 0;
       }
     }
-
   </style>
-<link href="assets/static/bundle/style/style.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="assets/style/custom.css" rel="stylesheet">
+  <link href="assets/static/bundle/style/style.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Datatable CSS -->
+  <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="assets/style/custom.css" rel="stylesheet">
 </head>
 
 <body class="app is-collapsed">
@@ -94,7 +100,6 @@
         loader.classList.add('fadeOut');
       }, 300);
     });
-
   </script>
 
   <!-- @App Content -->
@@ -367,282 +372,197 @@
                 </nav>
               </div>
               <div class="form-group row mb-0">
-                  <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="overviewRange" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      This Week
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="overviewRange">
-                      <a class="dropdown-item" href="#">This Week</a>
-                      <a class="dropdown-item" href="#">This Month</a>
-                      <a class="dropdown-item" href="#">This Year</a>
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="overviewRange" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    This Week
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="overviewRange">
+                    <a class="dropdown-item" href="#">This Week</a>
+                    <a class="dropdown-item" href="#">This Month</a>
+                    <a class="dropdown-item" href="#">This Year</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row gap-20">
+            <div class="masonry-item col-md-4">
+              <!-- # Problem ==================== -->
+              <div class="bd bgc-white">
+                <div class="layers">
+                  <div class="layer w-100 pX-20 pT-20">
+                    <h6 class="lh-1 mb-0"> Problem</h6>
+                    <small>82 Problems</small>
+                  </div>
+                  <div class="layer p-20 pb-0 w-100 mb-10">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Top Problem</span> <br />
+                        <small class="mb-0">Tissue</small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">60</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layer p-20 w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Unsolved Issue </span> <br />
+                        <small class="mb-0 text-danger">
+                          <i class="ti-arrow-up"></i>
+                          from last week
+                        </small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">30</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layer p-20 w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Unresponsed Issue </span> <br />
+                        <small class="mb-0 text-danger">
+                          <i class="ti-arrow-up"></i>
+                          from last week
+                        </small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">10</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layer p-20 w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Average Response Time</span> <br />
+                        <small class="mb-0 text-danger">
+                          <i class="ti-arrow-up"></i>
+                          from last week
+                        </small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">12h 25min</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="masonry-item  w-100 mB-10">
-              <div class="row gap-20">
-                <!-- #Total Unsolved Problem ==================== -->
-                <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Unsolved Problem</h6>
+            <div class="masonry-item col-md-4">
+              <!-- # Complain ==================== -->
+              <div class="bd bgc-white">
+                <div class="layers">
+                  <div class="layer w-100 pX-20 pT-20">
+                    <h6 class="lh-1 mb-0"> Complain</h6>
+                    <small>82 Complains</small>
+                  </div>
+                  <div class="layer p-20 pb-0 w-100 mb-10">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Top Complain</span> <br />
+                        <small class="mb-0">Tissue</small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">60</span>
+                      </div>
                     </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">3 of 25</span> <br />
-                          <small class="mb-0">Unsolved Problem</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">40%</span>
-                        </div>
+                  </div>
+                  <div class="layer p-20 w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Unsolved Issue </span> <br />
+                        <small class="mb-0 text-danger">
+                          <i class="ti-arrow-up"></i>
+                          from last week
+                        </small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">30</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layer p-20 w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Unresponsed Issue </span> <br />
+                        <small class="mb-0 text-danger">
+                          <i class="ti-arrow-up"></i>
+                          from last week
+                        </small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">10</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layer p-20 w-100">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Average Response Time</span> <br />
+                        <small class="mb-0 text-danger">
+                          <i class="ti-arrow-up"></i>
+                          from last week
+                        </small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">12h 25min</span>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- #Total Unresponse Problem ==================== -->
-                <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Unresponse Problem</h6>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">2</span> <br />
-                          <small class="mb-0">Unresponse Problem</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">80%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- #Total Unsolved Complain ==================== -->
-                <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Unsolved Complain</h6>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">10 of 25</span> <br />
-                          <small class="mb-0">Unsolved Complain</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">40%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- #Total Unresponse Complain ==================== -->
-                <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Unresponse Complain</h6>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">3</span> <br />
-                          <small class="mb-0">Unresponse Complain</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">80%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
-            <div class="row gap-20">
-              <div class="masonry-item col-md-4">
-                <!-- # Problem ==================== -->
-                <div class="bd bgc-white">
-                  <div class="layers">
-                    <div class="layer w-100 pX-20 pT-20">
-                      <h6 class="lh-1 mb-0"> Problem</h6>
-                      <small>82 Problems</small>
-                    </div>
-                    <div class="layer p-20 pb-0 w-100 mb-10">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Top Problem</span> <br />
-                          <small class="mb-0">Tissue</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">60</span>
-                        </div>
+            <div class="masonry-item col-md-4">
+              <!-- # Rating ==================== -->
+              <div class="bd bgc-white">
+                <div class="layers">
+                  <div class="layer w-100 pX-20 pT-20">
+                    <h6 class="lh-1 mb-0"> Rating</h6>
+                    <small>82 Ratings</small>
+                  </div>
+                  <div class="layer p-20 pb-0 w-100 mb-10">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Average Rating</span> <br />
+                        <small class="mb-0">Average of all ratings</small>
                       </div>
-                    </div>
-                    <div class="layer p-20 w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Unsolved Issue </span> <br />
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            from last week
-                          </small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">30</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="layer p-20 w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Unresponsed Issue </span> <br />
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            from last week
-                          </small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">10</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="layer p-20 w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Average Response Time</span> <br />
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            from last week
-                          </small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">12h 25min</span>
-                        </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4.5</span>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="masonry-item col-md-4">
-                <!-- # Complain ==================== -->
-                <div class="bd bgc-white">
-                  <div class="layers">
-                    <div class="layer w-100 pX-20 pT-20">
-                      <h6 class="lh-1 mb-0"> Complain</h6>
-                      <small>82 Complains</small>
-                    </div>
-                    <div class="layer p-20 pb-0 w-100 mb-10">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Top Complain</span> <br />
-                          <small class="mb-0">Tissue</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">60</span>
-                        </div>
+                  <div class="layer p-20 pb-0 w-100 mb-10">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Top Rating</span> <br />
+                        <small class="mb-0">The top rank of all ratings</small>
                       </div>
-                    </div>
-                    <div class="layer p-20 w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Unsolved Issue </span> <br />
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            from last week
-                          </small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">30</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="layer p-20 w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Unresponsed Issue </span> <br />
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            from last week
-                          </small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">10</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="layer p-20 w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Average Response Time</span> <br />
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            from last week
-                          </small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">12h 25min</span>
-                        </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4.8</span>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="masonry-item col-md-4">
-                <!-- # Rating ==================== -->
-                <div class="bd bgc-white">
-                  <div class="layers">
-                    <div class="layer w-100 pX-20 pT-20">
-                      <h6 class="lh-1 mb-0"> Rating</h6>
-                      <small>82 Ratings</small>
-                    </div>
-                    <div class="layer p-20 pb-0 w-100 mb-10">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Average Rating</span> <br />
-                          <small class="mb-0">Average of all ratings</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4.5</span>
-                        </div>
+                  <div class="layer p-20 pb-0 w-100 mb-10">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Bottom Rating</span> <br />
+                        <small class="mb-0">The bottom rank of all ratings</small>
+                      </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4</span>
                       </div>
                     </div>
-                    <div class="layer p-20 pb-0 w-100 mb-10">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Top Rating</span> <br />
-                          <small class="mb-0">The top rank of all ratings</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4.8</span>
-                        </div>
+                  </div>
+                  <div class="layer p-20 pb-0 w-100 mb-10">
+                    <div class="peers ai-sb fxw-nw">
+                      <div class="peer peer-greed">
+                        <span class="fw-600 fsz-sm">Top Toilet</span> <br />
+                        <small class="mb-0">best toilet of all rating</small>
                       </div>
-                    </div>
-                    <div class="layer p-20 pb-0 w-100 mb-10">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Bottom Rating</span> <br />
-                          <small class="mb-0">The bottom rank of all ratings</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="layer p-20 pb-0 w-100 mb-10">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <span class="fw-600 fsz-sm">Top Toilet</span> <br />
-                          <small class="mb-0">best toilet of all rating</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">Toilet Block M</span>
-                        </div>
+                      <div class="peer">
+                        <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">Toilet Block M</span>
                       </div>
                     </div>
                   </div>
@@ -651,16 +571,29 @@
             </div>
           </div>
         </div>
-      </main>
+    </main>
 
-      <!-- ### $App Screen Footer ### -->
-      <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-        <span>Copyright © 2019 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
-      </footer>
-    </div>
+    <!-- ### $App Screen Footer ### -->
+    <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+      <span>Copyright © 2019 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
+    </footer>
   </div>
+  <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script>
+  <script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
+
+  <!-- Jquery Min JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <!-- Bootstrap Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- SweetAlert 2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!-- Custom Js -->
+  <script src="assets/js/custom.js"></script>
+
   <script>
     $(document).ready(function () {
       $('.deleteRecord').click(function () {
@@ -673,9 +606,8 @@
         })
       })
     })
-
   </script>
-  <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script><script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
+
 </body>
 
 </html>
