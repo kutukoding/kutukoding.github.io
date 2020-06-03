@@ -255,7 +255,7 @@
     top: 0;
     right: 20px;
     background: #e9edf1;
-    padding: 15px 20px;
+    padding: 12px 20px;
     border-radius: 0 0 8px 8px;
 }
 
@@ -266,6 +266,9 @@
 /* colors */
 .color-brand {
     color: #00CAE8 !important;
+}
+.color-dark {
+    color: #313435;
 }
 
 /* ---- RESPONSIVE ----- */
