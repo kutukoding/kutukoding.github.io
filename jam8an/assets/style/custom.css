@@ -1,0 +1,29 @@
+/* child on sidedbar */
+.sidebar-menu>li.dropdown ul.dropdown-menu {
+    padding-left: 54px !important;
+}
+
+/* button */
+.btn {
+    border-radius: 24px !important;
+    padding: .375rem 1.5rem !important;
+}
+.btn-primary {
+    background-color: #00CAE8 !important;
+    border: none !important;
+
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+}
+
+/* pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, 
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #00CAE8 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 24px !important;
+    cursor: pointer;
+}
