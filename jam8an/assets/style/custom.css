@@ -255,6 +255,11 @@
     min-height: 100vh !important;
 }
 
+/* colors */
+.color-brand {
+    color: #00CAE8 !important;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
     /* notifikasi */
