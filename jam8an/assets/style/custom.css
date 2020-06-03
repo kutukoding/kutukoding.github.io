@@ -93,6 +93,18 @@
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
+.btn-disabled,
+.btn.disabled, .btn:disabled {
+    background-color: #ccc !important;
+    border: #ccc !important;
+    color: #72777a !important;
+}
+.btn-disabled:hover,
+.btn.disabled:hover {
+    background-color: #ccc !important;
+    border: #ccc !important;
+    color: #72777a !important;
+}
 
 /* wizard btn */
 .btn-circle {
