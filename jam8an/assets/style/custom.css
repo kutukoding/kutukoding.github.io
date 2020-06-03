@@ -103,7 +103,7 @@
     margin-right: 5px;
 }
 .tbl-pagination .pagination-status {
-    color: #fff;
+    /* color: #fff; */
     font-size: 12px;
 }
 .tbl-pagination .pagination .page-link {
