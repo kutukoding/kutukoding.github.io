@@ -4,7 +4,17 @@
 
 var custom = function () {
   var datatable = function () {
-    $('.js-datatable').DataTable();
+    $('.js-datatable').DataTable({
+      dom: '<"top">rt<"bottom"lip><"clear">',
+      searching: false,
+      language: {
+        paginate: {
+          previous: "Prev"
+        },
+        lengthMenu: "_MENU_",
+        info: "Showing _START_ to _END_ of _TOTAL_"
+      }
+    });
   }
 
   return {

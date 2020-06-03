@@ -271,6 +271,28 @@
     color: #313435;
 }
 
+/* Custom Datatable */
+.dataTables_wrapper .dataTables_info {
+    clear: none;
+    padding-top: 7px;
+    font-size: 12px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background-color: #ecf1f6;
+    border: none !important;
+    border-radius: 6px !important;
+    color: black !important;
+    height: auto !important;
+    margin-right: 10px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 5px 11px;
+    border: none !important;
+    margin-right: 5px;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
     /* notifikasi */
