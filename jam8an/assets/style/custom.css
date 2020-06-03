@@ -41,7 +41,7 @@
     border: none;
 }
 .sidebar-menu li.dropdown.open > a {
-    border-right: 2px solid #00CAE8;
+    /* border-right: 2px solid #00CAE8; */
 }
 
 .sidebar-menu li.actived a {
@@ -118,7 +118,7 @@
     border: none !important;
 }
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #ecf1f6;
+    background-color: #ecf1f6 !important;
 }
 /* tabel search & pagination (background) */
 .tbl-search, 
