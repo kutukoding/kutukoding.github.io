@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sign Up</title>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <style>
+    #loader {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background: #fff;
+      z-index: 90000;
+    }
+
+    #loader.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      background-color: #333;
+      border-radius: 100%;
+      -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0)
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+  </style>
+<link href="assets/static/bundle/style/style.css" rel="stylesheet"></head>
+
+<body class="app">
+  <div id='loader'>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function load() {
+      const loader = document.getElementById('loader');
+      setTimeout(function () {
+        loader.classList.add('fadeOut');
+      }, 300);
+    });
+
+  </script>
+  <div class="peers ai-s fxw-nw h-100vh">
+    <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style='background-image: url("assets/static/images/bg.jpg")'>
+      <div class="pos-a centerXY">
+        <div class="bgc-white bdrs-50p pos-r" style='width: 180px; height: 180px;'>
+          <img class="pos-a centerXY" src="assets/static/images/logo.png" alt="" width="140">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-7 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r d-flex align-items-center justify-content-center" style='min-width: 800px;'>
+      <div style="min-width: 450px;">
+        <h4 class="fw-300 c-grey-900 fw-600 fsz-lg">Sign Up</h4>
+        <div class="stepwizard my-4">
+          <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+              <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+              <p>Data</p>
+            </div>
+            <div class="stepwizard-step">
+              <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+              <p>Plan</p>
+            </div>
+            <div class="stepwizard-step">
+              <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+              <p>Pay</p>
+            </div>
+            <div class="stepwizard-step">
+              <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+              <p>Review</p>
+            </div>
+          </div>
+        </div>
+        <form role="form">
+          <div class="row setup-content" id="step-1">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Name</label>
+                <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name" />
+              </div>
+              <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="email" required="required" class="form-control" placeholder="Enter Email" />
+              </div>
+              <div class="form-group">
+                <div class="control-label d-flex justify-content-between">
+                  <label>Password</label>
+                  <button type="button" class="btn btn-default btn-sm text-primary showPassword">
+                    <i class="ti-eye"></i>
+                  </button>
+                </div>
+                <input type="password" required="required" class="form-control passwordInput" placeholder="Enter Password" />
+              </div>
+              <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+            </div>
+          </div>
+          <div class="setup-content" id="step-2" style="max-width: 465px;">
+            <div class="grid-2-column">
+              <div class="plan plan--border">
+                <h4 class="fsz-md fw-600">Free Plan</h4>
+                <span class="mb-3">Rp0</span>
+                <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
+                <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Free Plan" checked>
+              </div>
+              <div class="plan plan--border">
+                <h4 class="fsz-md fw-600">Premium Plan</h4>
+                <span class="mb-3">Rp90.000</span>
+                <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
+                <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Premium Plan">
+              </div>
+              <div class="plan plan--border">
+                <h4 class="fsz-md fw-600">Deluxe Plan</h4>
+                <span class="mb-3">Rp250.000</span>
+                <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
+                <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Deluxe Plan">
+              </div>
+              <div class="plan plan--border">
+                <h4 class="fsz-md fw-600">Extra Deluxe Plan</h4>
+                <span class="mb-3">Rp500.000</span>
+                <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
+                <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Deluxe Plan">
+              </div>
+            </div>
+            <button class="btn btn-primary nextBtn pull-right mt-3" type="button">Next</button>
+          </div>
+          <div class="row setup-content" id="step-3" style="max-width: 465px;">
+            <div class="col-md-12">
+              <div class="accordion" id="accordionExample">
+                <div class="card z-depth-0 bordered">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="OVO" checked>
+                        OVO
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                      labore sustainable.
+                    </div>
+                  </div>
+                </div>
+                <div class="card z-depth-0 bordered">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="GO PAY" checked>
+                        GO PAY
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                      labore sustainable.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary nextBtn pull-right mt-3" type="button">Next</button>
+            </div>
+          </div>
+          <div class="row setup-content" id="step-4">
+            <div class="col-md-12">
+              <h4>Account Data</h4>
+              <p>
+                Name: <span class="fw-600">xxxxxxxxxxxxx</span>
+              </p>
+              <p>
+                Email: <span class="fw-600">xxxxxxxxxxxxx</span>
+              </p>
+              <h4>Subscription Plan</h4>
+              <p>
+                Free Plan
+              </p>
+              <h4>Payment Method</h4>
+              <p>
+                GO PAY
+              </p>
+              <button class="btn btn-primary pull-right" type="button">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="detailPlanModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Detail Plan</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body message">
+          <div class="message-head row">
+            <div class="col-md-6">
+              <p>
+                Name :
+                <span>
+                  Sony
+                </span>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="text-right">
+                Date :
+                <span>
+                  30-05-2020 09:00:00
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="message-content">
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures.
+            </p>
+            <hr class="solid">
+            <form>
+              <div class="form-group row">
+                <label for="responseInput" class="col-sm-2 col-form-label">Response</label>
+                <div class="col-sm-10">
+                  <textarea id=responseInput class="form-control" name="response" cols="30" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="statusInput" class="col-sm-2 col-form-label">Status</label>
+                <div class="col-sm-10 d-flex align-items-center">
+                  <label class="switch mb-0">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                  <span class="text-success ml-3">Solved</span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Response</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      var navListItems = $('div.setup-panel div a'),
+        allWells = $('.setup-content'),
+        allNextBtn = $('.nextBtn');
+
+      allWells.hide();
+
+      navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+          $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+          navListItems.removeClass('btn-primary').addClass('btn-default');
+          $item.addClass('btn-primary');
+          allWells.hide();
+          $target.show();
+          $target.find('input:eq(0)').focus();
+        }
+      });
+
+      allNextBtn.click(function () {
+        var curStep = $(this).closest(".setup-content"),
+          curStepBtn = curStep.attr("id"),
+          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        // for (var i = 0; i < curInputs.length; i++) {
+        //   if (!curInputs[i].validity.valid) {
+        //     isValid = false;
+        //     $(curInputs[i]).closest(".form-group").addClass("has-error");
+        //   }
+        // }
+
+        if (isValid)
+          nextStepWizard.removeAttr('disabled').trigger('click');
+      });
+
+      $('div.setup-panel div a.btn-primary').trigger('click');
+
+      $(".showPassword").click(function () {
+        if ($('.passwordInput').attr('type') == "password") {
+          $('.passwordInput').attr('type', 'text');
+        } else {
+          $('.passwordInput').attr('type', 'password');
+        }
+      })
+    });
+
+  </script>
+<script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script><script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script></body>
+
+</html>

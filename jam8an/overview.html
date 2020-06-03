@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Overview</title>
+
+  <style>
+    #loader {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background: #fff;
+      z-index: 90000;
+    }
+
+    #loader.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      background-color: #333;
+      border-radius: 100%;
+      -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0)
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+  </style>
+<link href="assets/static/bundle/style/style.css" rel="stylesheet"></head>
+
+<body class="app">
+  <!-- @TOC -->
+  <!-- =================================================== -->
+  <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+  <!-- @Page Loader -->
+  <!-- =================================================== -->
+  <div id='loader'>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function load() {
+      const loader = document.getElementById('loader');
+      setTimeout(function () {
+        loader.classList.add('fadeOut');
+      }, 300);
+    });
+
+  </script>
+
+  <!-- @App Content -->
+  <!-- =================================================== -->
+  <div>
+    <!-- #Left Sidebar ==================== -->
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <!-- ### $Sidebar Header ### -->
+        <div class="sidebar-logo">
+          <div class="peers ai-c fxw-nw">
+            <div class="peer peer-greed">
+              <a class="sidebar-link td-n" href="index.html">
+                <div class="peers ai-c jc-c">
+                  <div class="peer">
+                    <div class="logo">
+                      <img src="assets/static/images/logo.png" alt="logo" width="138">
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="peer">
+              <div class="mobile-toggle sidebar-toggle">
+                <a href="" class="td-n">
+                  <i class="ti-arrow-circle-left"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ### $Sidebar Menu ### -->
+        <ul class="sidebar-menu scrollable pos-r">
+          <li class="nav-item mT-30 actived">
+            <a class="sidebar-link" href="index.html">
+              <span class="icon-holder">
+                <i class="c-blue-500 ti-home"></i>
+              </span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-blue-500 ti-harddrives"></i>
+              </span>
+              <span class="title">Master Data</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="toilet.html">Toilet</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="cleaner.html">Cleaner</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="user.html">User</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="subscription.html">Subscription Plan</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class='sidebar-link' href="schedule.html">
+              <span class="icon-holder">
+                <i class="c-blue-500 ti-calendar"></i>
+              </span>
+              <span class="title">Schedule</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-blue-500 ti-stats-up"></i>
+              </span>
+              <span class="title">Monitoring</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="overview.html">Overview</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="problem.html">Problem</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="complain.html">Complain</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="rating.html">Rating</a>
+              </li>
+              <!-- <li>
+                  <a class='sidebar-link' href="absence.html">Monitoring Absence</a>
+                </li> -->
+            </ul>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-orange-500 ti-video-clapper"></i>
+              </span>
+              <span class="title">Tutorial</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="clean.html">How to Clean</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="repair.html">How to Repair</a>
+              </li>
+            </ul>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- #Main ============================ -->
+    <div class="page-container">
+      <!-- ### $Topbar ### -->
+      <div class="header navbar">
+        <div class="header-container">
+          <ul class="nav-left">
+            <li>
+              <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
+                <i class="ti-menu"></i>
+              </a>
+            </li>
+            <li class="search-box">
+              <a class="search-toggle no-pdd-right" href="javascript:void(0);">
+                <i class="search-icon ti-search pdd-right-10"></i>
+                <i class="search-icon-close ti-close pdd-right-10"></i>
+              </a>
+            </li>
+            <li class="search-input">
+              <input class="form-control" type="text" placeholder="Search...">
+            </li>
+          </ul>
+          <ul class="nav-right">
+            <li class="notifications dropdown">
+              <span class="counter bgc-red">3</span>
+              <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                <i class="ti-bell"></i>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li class="pX-20 pY-15 bdB">
+                  <i class="ti-bell pR-10"></i>
+                  <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                </li>
+                <li>
+                  <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+                    <li>
+                      <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                        <div class="peer mR-15">
+                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                        </div>
+                        <div class="peer peer-greed">
+                          <span>
+                            <span class="fw-500">John Doe</span>
+                            <span class="c-grey-600">liked your <span class="text-dark">post</span>
+                            </span>
+                          </span>
+                          <p class="m-0">
+                            <small class="fsz-xs">5 mins ago</small>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                        <div class="peer mR-15">
+                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
+                        </div>
+                        <div class="peer peer-greed">
+                          <span>
+                            <span class="fw-500">Moo Doe</span>
+                            <span class="c-grey-600">liked your <span class="text-dark">cover image</span>
+                            </span>
+                          </span>
+                          <p class="m-0">
+                            <small class="fsz-xs">7 mins ago</small>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                        <div class="peer mR-15">
+                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+                        </div>
+                        <div class="peer peer-greed">
+                          <span>
+                            <span class="fw-500">Lee Doe</span>
+                            <span class="c-grey-600">commented on your <span class="text-dark">video</span>
+                            </span>
+                          </span>
+                          <p class="m-0">
+                            <small class="fsz-xs">10 mins ago</small>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pX-20 pY-15 ta-c bdT">
+                  <span>
+                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                <div class="peer mR-10">
+                  <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                </div>
+                <div class="peer">
+                  <span class="fsz-sm c-grey-900">John Doe</span>
+                </div>
+              </a>
+              <ul class="dropdown-menu fsz-sm">
+                <li>
+                  <a href="upgrade.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-upload mR-10"></i>
+                    <span>Upgrade Plan</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="profile.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-user mR-10"></i>
+                    <span>Profile</span>
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="login.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-power-off mR-10"></i>
+                    <span>Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ### $App Screen Content ### -->
+      <main class='main-content bgc-grey-100'>
+        <div id='mainContent'>
+          <div class="container-fluid">
+            <div class="d-flex justify-content-between mT-10 mB-30">
+              <div class="left-header d-flex align-items-center">
+                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Overview</h4>
+                <nav aria-label="breadcrumb ml-3">
+                  <ol class="breadcrumb breadcrumb--transparent mb-0 p-0">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="ti-home"></i></a></li>
+                    <li class="breadcrumb-item">Monitoring</li>
+                    <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                  </ol>
+                </nav>
+              </div>
+              <div class="form-group row mb-0">
+                <div class="col-sm-12">
+                  <select id="statusInput" class="form-control" placeholder="Select Status">
+                    <option value="Weekly">Weekly</option>
+                    <option value="3 Montly">3 Montly</option>
+                    <option value="Year">Year</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="masonry-item  w-100 mB-10">
+              <div class="row gap-20">
+                <!-- #Total Unsolved Problem ==================== -->
+                <div class='col-md-3'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">Unsolved Problem</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-md">3 of 25</span> <br />
+                          <small class="mb-0">Unsolved Problem</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">40%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- #Total Unresponse Problem ==================== -->
+                <div class='col-md-3'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">Unresponse Problem</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-md">2</span> <br />
+                          <small class="mb-0">Unresponse Problem</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">80%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- #Total Unsolved Complain ==================== -->
+                <div class='col-md-3'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">Unsolved Complain</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-md">10 of 25</span> <br />
+                          <small class="mb-0">Unsolved Complain</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">40%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- #Total Unresponse Complain ==================== -->
+                <div class='col-md-3'>
+                  <div class="layers bd bgc-white p-20">
+                    <div class="layer w-100 mB-10">
+                      <h6 class="lh-1">Unresponse Complain</h6>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-md">3</span> <br />
+                          <small class="mb-0">Unresponse Complain</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">80%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row gap-20">
+              <div class="masonry-item col-md-4">
+                <!-- # Problem ==================== -->
+                <div class="bd bgc-white">
+                  <div class="layers">
+                    <div class="layer w-100 pX-20 pT-20">
+                      <h6 class="lh-1 mb-0"> Problem</h6>
+                      <small>82 Problems</small>
+                    </div>
+                    <div class="layer p-20 pb-0 w-100 mb-10">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Top Problem</span> <br />
+                          <small class="mb-0">Tissue</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">60</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Unsolved Issue </span> <br />
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            from last week
+                          </small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">30</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Unresponsed Issue </span> <br />
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            from last week
+                          </small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">10</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Average Response Time</span> <br />
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            from last week
+                          </small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">12h 25min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item col-md-4">
+                <!-- # Complain ==================== -->
+                <div class="bd bgc-white">
+                  <div class="layers">
+                    <div class="layer w-100 pX-20 pT-20">
+                      <h6 class="lh-1 mb-0"> Complain</h6>
+                      <small>82 Complains</small>
+                    </div>
+                    <div class="layer p-20 pb-0 w-100 mb-10">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Top Complain</span> <br />
+                          <small class="mb-0">Tissue</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">60</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Unsolved Issue </span> <br />
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            from last week
+                          </small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">30</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Unresponsed Issue </span> <br />
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            from last week
+                          </small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">10</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Average Response Time</span> <br />
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            from last week
+                          </small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">12h 25min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="masonry-item col-md-4">
+                <!-- # Rating ==================== -->
+                <div class="bd bgc-white">
+                  <div class="layers">
+                    <div class="layer w-100 pX-20 pT-20">
+                      <h6 class="lh-1 mb-0"> Rating</h6>
+                      <small>82 Ratings</small>
+                    </div>
+                    <div class="layer p-20 pb-0 w-100 mb-10">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Average Rating</span> <br />
+                          <small class="mb-0">Average of all ratings</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4.5</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 pb-0 w-100 mb-10">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Top Rating</span> <br />
+                          <small class="mb-0">The top rank of all ratings</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4.8</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 pb-0 w-100 mb-10">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Bottom Rating</span> <br />
+                          <small class="mb-0">The bottom rank of all ratings</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">4</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layer p-20 pb-0 w-100 mb-10">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <span class="fw-600 fsz-sm">Top Toilet</span> <br />
+                          <small class="mb-0">best toilet of all rating</small>
+                        </div>
+                        <div class="peer">
+                          <span class="d-ib lh-0 va-m fw-500 fsz-sm bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">Toilet Block M</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ### $App Screen Footer ### -->
+      <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+        <span>Copyright © 2019 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script>
+  <script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.deleteRecord').click(function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!"
+        })
+      })
+    })
+
+  </script>
+<script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script><script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script></body>
+
+</html>
