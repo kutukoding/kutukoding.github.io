@@ -1,6 +1,55 @@
 /* child on sidedbar */
 .sidebar-menu>li.dropdown ul.dropdown-menu {
-    padding-left: 54px !important;
+    padding-left: 55px !important;
+}
+
+/* sidebar icon */
+.sidebar-menu>li>a {
+    margin: 10px 0;
+}
+.is-collapsed .sidebar-menu>li>a .icon-holder {
+    width: 25px !important;
+}
+.sidebar-menu>li>a .icon-holder {
+    height: 25px !important;
+    line-height: 25px !important;
+}
+.sidebar-menu li.dropdown .arrow {
+    line-height: 25px !important;
+}
+.is-collapsed .sidebar-menu>li>a .icon-holder i {
+    /* font-size: 14px !important; */
+}
+
+.sidebar-menu>li>a {
+    font-weight: 400 !important;
+}
+.sidebar-menu li.dropdown.open>a {
+    color: #72777a !important;
+    /* font-weight: 500 !important; */
+}
+
+.sidebar-menu>li.dropdown ul.dropdown-menu>li>a {
+    padding: 5px 15px !important;
+    margin: 5px 0;
+}
+.sidebar-menu li.actived {
+    border-right: 2px solid #00CAE8;
+}
+/* custom on minify */
+.is-collapsed .sidebar-menu li.dropdown.open > a { 
+    border: none;
+}
+.sidebar-menu li.dropdown.open > a {
+    border-right: 2px solid #00CAE8;
+}
+
+.sidebar-menu li.actived a {
+    color: #313435 !important;
+    font-weight: 600 !important;
+}
+.sidebar-menu>li.dropdown ul.dropdown-menu>li.actived a {
+    color: #313435;
 }
 
 /* button */
