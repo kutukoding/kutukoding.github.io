@@ -112,7 +112,7 @@
         <div class="sidebar-logo">
           <div class="peers ai-c fxw-nw">
             <div class="peer peer-greed">
-              <a class="sidebar-link td-n" href="index.html">
+              <a class="sidebar-link td-n" href="dashboard.html">
                 <div class="peers ai-c jc-c">
                   <div class="peer">
                     <div class="logo">
@@ -135,7 +135,7 @@
         <!-- ### $Sidebar Menu ### -->
         <ul class="sidebar-menu scrollable pos-r">
           <li class="nav-item mT-30">
-            <a class="sidebar-link" href="index.html">
+            <a class="sidebar-link" href="dashboard.html">
               <span class="icon-holder">
                 <i class="c-blue-500 ti-home"></i>
               </span>
@@ -154,7 +154,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class='sidebar-link' href="toilet.html">Toilet</a>
+                <a class='sidebar-link' href="#">Toilet</a>
               </li>
               <li>
                 <a class='sidebar-link' href="cleaner.html">Cleaner</a>
@@ -168,7 +168,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class='sidebar-link' href="schedule.html">
+            <a class='sidebar-link' href="#">
               <span class="icon-holder">
                 <i class="c-blue-500 ti-calendar"></i>
               </span>
@@ -237,7 +237,7 @@
                 <i class="ti-menu"></i>
               </a>
             </li>
-            <li class="search-box">
+            <!-- <li class="search-box">
               <a class="search-toggle no-pdd-right" href="javascript:void(0);">
                 <i class="search-icon ti-search pdd-right-10"></i>
                 <i class="search-icon-close ti-close pdd-right-10"></i>
@@ -245,7 +245,7 @@
             </li>
             <li class="search-input">
               <input class="form-control" type="text" placeholder="Search...">
-            </li>
+            </li> -->
           </ul>
           <ul class="nav-right">
             <li class="notifications dropdown">
@@ -264,12 +264,12 @@
                     <li>
                       <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
                         <div class="peer mR-15">
-                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                          <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                         </div>
                         <div class="peer peer-greed">
                           <span>
                             <span class="fw-500">John Doe</span>
-                            <span class="c-grey-600">liked your <span class="text-dark">post</span>
+                            <span class="c-grey-600">solving <span class="text-dark">complains #C23341</span>
                             </span>
                           </span>
                           <p class="m-0">
@@ -281,12 +281,12 @@
                     <li>
                       <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
                         <div class="peer mR-15">
-                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="">
+                          <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                         </div>
                         <div class="peer peer-greed">
                           <span>
-                            <span class="fw-500">Moo Doe</span>
-                            <span class="c-grey-600">liked your <span class="text-dark">cover image</span>
+                            <span class="fw-500">John Doe</span>
+                            <span class="c-grey-600">response <span class="text-dark">complains #C23341</span>
                             </span>
                           </span>
                           <p class="m-0">
@@ -298,12 +298,12 @@
                     <li>
                       <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
                         <div class="peer mR-15">
-                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+                          <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
                         </div>
                         <div class="peer peer-greed">
                           <span>
                             <span class="fw-500">Lee Doe</span>
-                            <span class="c-grey-600">commented on your <span class="text-dark">video</span>
+                            <span class="c-grey-600">writing new <span class="text-dark">problems #P1001</span>
                             </span>
                           </span>
                           <p class="m-0">
@@ -345,7 +345,7 @@
                 </li>
                 <li role="separator" class="divider"></li>
                 <li>
-                  <a href="signin.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                  <a href="index.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-power-off mR-10"></i>
                     <span>Logout</span>
                   </a>
@@ -372,22 +372,30 @@
                 </nav>
               </div>
             </div>
+
+            <!-- Widgets Stats -->
             <div class="masonry-item  w-100 mB-30">
               <div class="row gap-20">
-                <!-- #Total Unsolved Problem ==================== -->
+                <!-- #Total Problem ==================== -->
                 <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Unsolved Problem</h6>
+                  <div class="layers bgc-white px-3 py-4 pos-r">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Total Problems</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-face-sad"></i>
+                      </div>
                     </div>
                     <div class="layer w-100">
                       <div class="peers ai-sb fxw-nw">
                         <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">10 of 25</span> <br />
-                          <small class="mb-0">Unsolved Problem</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">40%</span>
+                          <h3 class="fw-600 mb-0 color-brand">85 Problems</h3>
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            15% increased
+                          </small>
+                          <small class="mb-0">
+                            from last week
+                          </small>
                         </div>
                       </div>
                     </div>
@@ -396,18 +404,24 @@
 
                 <!-- #Total Unresponse Problem ==================== -->
                 <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Unresponse Problem</h6>
+                  <div class="layers bgc-white px-3 py-4 pos-r">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Unresponse Problems</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-comments"></i>
+                      </div>
                     </div>
                     <div class="layer w-100">
                       <div class="peers ai-sb fxw-nw">
                         <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">20 of 25</span> <br />
-                          <small class="mb-0">Unresponse Problem</small>
-                        </div>
-                        <div class="peer">
-                          <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">80%</span>
+                          <h3 class="fw-600 mb-0 color-brand">35 Problems</h3>
+                          <small class="mb-0 text-success">
+                            <i class="ti-arrow-down"></i>
+                            15% decreased
+                          </small>
+                          <small class="mb-0">
+                            from last week
+                          </small>
                         </div>
                       </div>
                     </div>
@@ -416,32 +430,49 @@
 
                 <!-- #Top Category ==================== -->
                 <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Top Category</h6>
+                  <div class="layers bgc-white px-3 py-4 pos-r">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Top Issues</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-crown"></i>
+                      </div>
                     </div>
                     <div class="layer w-100">
                       <div class="peers ai-sb fxw-nw">
                         <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">Tissue : <b>79 Problem</b></span> <br />
-                          <small class="mb-0">Of the overall problem</small>
+                          <h3 class="fw-600 mb-0 color-brand">Tissue</h3>
+                          <small class="mb-0 text-danger">
+                            35 of 85
+                          </small>
+                          <small class="mb-0">
+                            problems
+                          </small>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <!-- #Average Solved Time ==================== -->
+                <!-- #Average Response Time ==================== -->
                 <div class='col-md-3'>
-                  <div class="layers bd bgc-white p-20">
-                    <div class="layer w-100 mB-10">
-                      <h6 class="lh-1">Average Solved Time</h6>
+                  <div class="layers bgc-white px-3 py-4 pos-r">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Average Response Time</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-timer"></i>
+                      </div>
                     </div>
                     <div class="layer w-100">
                       <div class="peers ai-sb fxw-nw">
                         <div class="peer peer-greed">
-                          <span class="fw-600 fsz-md">4 days</span> <br />
-                          <small class="mb-0">Of the overall problem</small>
+                          <h3 class="fw-600 mb-0 color-brand">3d 12h 40min</h3>
+                          <small class="mb-0 text-success">
+                            <i class="ti-arrow-up"></i>
+                            10% increased
+                          </small>
+                          <small class="mb-0">
+                            from last week
+                          </small>
                         </div>
                       </div>
                     </div>
@@ -449,6 +480,7 @@
                 </div>
               </div>
             </div>
+            
             <div class="row">
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
@@ -502,15 +534,19 @@
                           <th>Date</th>
                           <th>Name</th>
                           <th>Category</th>
+                          <th>Response Time</th>
+                          <th>Message</th>
                           <th>Status</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>31-05-2020 10:00:00</td>
+                          <td class="tbl-date">31-05-2020 10:00:00</td>
                           <td>Boby</td>
                           <td>Tissue</td>
+                          <td>2d 22h 35min</td>
+                          <td><p class="tbl-truncate">Toilet lack of tissues. 4 out of toilets runout tissues</p></td>
                           <td>
                             <span class="badge badge-success">Solved</span>
                           </td>
@@ -522,6 +558,8 @@
                           <td>31-05-2020 09:00:00</td>
                           <td>Ainur</td>
                           <td>Cleanliness</td>
+                          <td>1d 03h 15min</td>
+                          <td><p class="tbl-truncate">Cleaner seems lazy to cleaning the floor. There are a lot of foot mark in several areas. Some areas stillnt dry</p></td>
                           <td>
                             <span class="badge badge-success">Solved</span>
                           </td>
@@ -533,6 +571,8 @@
                           <td>31-05-2020 08:30:00</td>
                           <td>Sony</td>
                           <td>Tissue</td>
+                          <td>2d 22h 35min</td>
+                          <td><p class="tbl-truncate">Toilet lack of tissues. 4 out of toilets runout tissues</p></td>
                           <td>
                             <span class="badge badge-danger">Unsolved</span>
                           </td>
@@ -542,8 +582,10 @@
                         </tr>
                         <tr>
                           <td>31-05-2020 08:30:00</td>
-                          <td>VCD</td>
+                          <td>Rizky</td>
                           <td>Cleanliness</td>
+                          <td>1d 03h 15min</td>
+                          <td><p class="tbl-truncate">Cleaner seems lazy to cleaning the floor. There are a lot of foot mark in several areas. Some areas stillnt dry</p></td>
                           <td>
                             <span class="badge badge-secondary">Unresponse</span>
                           </td>
@@ -552,9 +594,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>31-05-2020 10:00:00</td>
+                          <td class="tbl-date">31-05-2020 10:00:00</td>
                           <td>Boby</td>
                           <td>Tissue</td>
+                          <td>2d 22h 35min</td>
+                          <td><p class="tbl-truncate">Toilet lack of tissues. 4 out of toilets runout tissues</p></td>
                           <td>
                             <span class="badge badge-success">Solved</span>
                           </td>
@@ -566,6 +610,8 @@
                           <td>31-05-2020 09:00:00</td>
                           <td>Ainur</td>
                           <td>Cleanliness</td>
+                          <td>1d 03h 15min</td>
+                          <td><p class="tbl-truncate">Cleaner seems lazy to cleaning the floor. There are a lot of foot mark in several areas. Some areas stillnt dry</p></td>
                           <td>
                             <span class="badge badge-success">Solved</span>
                           </td>
@@ -577,6 +623,8 @@
                           <td>31-05-2020 08:30:00</td>
                           <td>Sony</td>
                           <td>Tissue</td>
+                          <td>2d 22h 35min</td>
+                          <td><p class="tbl-truncate">Toilet lack of tissues. 4 out of toilets runout tissues</p></td>
                           <td>
                             <span class="badge badge-danger">Unsolved</span>
                           </td>
@@ -586,8 +634,10 @@
                         </tr>
                         <tr>
                           <td>31-05-2020 08:30:00</td>
-                          <td>VCD</td>
+                          <td>Rizky</td>
                           <td>Cleanliness</td>
+                          <td>1d 03h 15min</td>
+                          <td><p class="tbl-truncate">Cleaner seems lazy to cleaning the floor. There are a lot of foot mark in several areas. Some areas stillnt dry</p></td>
                           <td>
                             <span class="badge badge-secondary">Unresponse</span>
                           </td>
@@ -596,9 +646,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>31-05-2020 10:00:00</td>
+                          <td class="tbl-date">31-05-2020 10:00:00</td>
                           <td>Boby</td>
-                          <td>4.5</td>
+                          <td>Water</td>
+                          <td>5d 14h 25min</td>
+                          <td><p class="tbl-truncate">Toilet flush broken :angry:</p></td>
                           <td>
                             <span class="badge badge-success">Solved</span>
                           </td>
@@ -610,6 +662,8 @@
                           <td>31-05-2020 09:00:00</td>
                           <td>Ainur</td>
                           <td>Cleanliness</td>
+                          <td>1d 03h 15min</td>
+                          <td><p class="tbl-truncate">Cleaner seems lazy to cleaning the floor. There are a lot of foot mark in several areas. Some areas stillnt dry</p></td>
                           <td>
                             <span class="badge badge-success">Solved</span>
                           </td>
@@ -621,6 +675,8 @@
                           <td>31-05-2020 08:30:00</td>
                           <td>Sony</td>
                           <td>Tissue</td>
+                          <td>2d 22h 35min</td>
+                          <td><p class="tbl-truncate">Toilet lack of tissues. 4 out of toilets runout tissues</p></td>
                           <td>
                             <span class="badge badge-danger">Unsolved</span>
                           </td>
@@ -630,8 +686,10 @@
                         </tr>
                         <tr>
                           <td>31-05-2020 08:30:00</td>
-                          <td>VCD</td>
+                          <td>Rizky</td>
                           <td>Cleanliness</td>
+                          <td>1d 03h 15min</td>
+                          <td><p class="tbl-truncate">Cleaner seems lazy to cleaning the floor. There are a lot of foot mark in several areas. Some areas stillnt dry</p></td>
                           <td>
                             <span class="badge badge-secondary">Unresponse</span>
                           </td>
@@ -684,7 +742,7 @@
 
       <!-- ### $App Screen Footer ### -->
       <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
-        <span>Copyright © 2019 Designed by <a href="https://colorlib.com" target='_blank' title="Colorlib">Colorlib</a>. All rights reserved.</span>
+        <span>Copyright © 2020. All rights reserved.</span>
       </footer>
     </div>
   </div>
@@ -694,14 +752,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Response Problem</h4>
+          <h4 class="modal-title">Response Complain</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body message">
+        <div class="modal-body message pt-0">
           <div class="message-head row">
             <div class="col-md-6">
               <p>
-                Name :
+                <b>Name:</b>
                 <span>
                   Sony
                 </span>
@@ -709,18 +767,21 @@
             </div>
             <div class="col-md-6">
               <p class="text-right">
-                Date :
+                <b>Date:</b>
                 <span>
                   30-05-2020 09:00:00
                 </span>
               </p>
             </div>
+            <div class="col-md-12">
+              <p class="mt-2">
+                "Cleaner seems lazy to cleaning the floor. 
+                There are a lot of foot mark in several areas. 
+                Some areas stillnt dry"
+              </p>
+            </div>
           </div>
           <div class="message-content">
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures.
-            </p>
-            <hr class="solid">
             <form>
               <div class="form-group row">
                 <label for="responseInput" class="col col-form-label">Response</label>
