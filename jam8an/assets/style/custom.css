@@ -56,29 +56,44 @@
 .btn {
     border-radius: 24px !important;
     padding: .375rem 1.5rem !important;
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
-    -moz-box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
-    box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
+}
+.btn.btn-default {
+    outline: none;
+    padding: .375rem !important;
 }
 .btn-outline-primary {
     color: #00CAE8 !important;
     border-color: #00CAE8 !important;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
+    box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
 }
 .btn-outline-primary:hover {
     color: #fff !important;
     background-color: #00D6F4 !important;
     border-color: #00D6F4 !important;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
+    box-shadow: 0px 2px 4px 0px rgba(44,44,44,.1);
 }
 .btn-primary {
     background-color: #00CAE8 !important;
     border: #00CAE8 !important;
 }
-.modal .btn-primary {
-
-}
 .btn-primary:hover {
     background-color: #00D6F4 !important;
     border: #00D6F4 !important;
+}
+.btn.focus, .btn:focus {
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* wizard btn */
+.btn-circle {
+    border-radius: 50% !important;
+    padding: 6px 0 !important;
 }
 
 /* pagination (with datatable) */
