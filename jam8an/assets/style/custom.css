@@ -90,9 +90,9 @@
 .tbl-search, 
 .tbl-pagination {
     /* background-color: #00CAE8; */
-    background: rgb(0,201,231);
+    /* background: rgb(0,201,231);
     background: linear-gradient(150deg, rgba(0,201,231,1) 0%, rgba(17,191,131,1) 200%);
-    color: #fff;
+    color: #fff; */
 }
 /* custom pagination (without datatable) */
 .tbl-pagination .pagination-limit {
@@ -127,10 +127,10 @@
     font-weight: 500;
 }
 .page-item .page-link {
-    background-color: #ecf1f6 !important;
+    /* background-color: #ecf1f6 !important; */
 }
 .page-item .page-link:hover {
-    background-color: #fff !important;
+    /* background-color: #fff !important; */
 }
 
 
