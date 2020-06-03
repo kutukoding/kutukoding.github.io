@@ -160,6 +160,9 @@
     color: #fff;
     font-weight: 500;
 }
+.tbl-date {
+    min-width: 145px;
+}
 .page-item .page-link {
     /* background-color: #ecf1f6 !important; */
 }
@@ -196,6 +199,14 @@
     width: 215px;
 }
 
+/* star icon */
+.fa-star {
+    color: #BEBEBE;
+}
+.checked {
+    color: orange;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
     /* notifikasi */
@@ -204,6 +215,14 @@
         right: -120px !important;
     }
 
+    /* table padding */
+    .table th,
+    .table td {
+        padding: .75rem !important;
+    }
+    .table td {
+        font-size: .75rem;
+    }
     /* table margin bottom */
     table.dataTable {
         margin-bottom: 10px !important;
