@@ -232,6 +232,17 @@
     margin-bottom: 0;
 }
 
+/* card (layers) */
+.layers {
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(82,63,105,.05);
+    box-shadow: 0 0 3px 0 rgba(82,63,105,.05);
+}
+
+.main-content {
+    min-height: 100vh !important;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
     /* notifikasi */
