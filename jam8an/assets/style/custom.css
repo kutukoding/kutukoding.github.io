@@ -153,6 +153,31 @@
 }
 
 
+/* SIGN IN */
+.bg-signin {
+    /* background-image: url("assets/static/images/bg.jpg"); */
+    background-color: #00CAE8;
+    background: rgb(0,201,231);
+    background: linear-gradient(150deg, rgba(0,201,231,1) 0%, rgba(17,191,131,1) 200%);
+    color: #fff;
+}
+.signin-ornament-top {
+    background-image: url("../img/ornament_top.png");
+    width: 209px;
+    height: 231px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.signin-ornament-bottom {
+    background-image: url("../img/ornament_bottom.png");
+    width: 146px;
+    height: 160px;
+    position: absolute;
+    bottom: 0;
+    left: 0;  
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
     /* notifikasi */
