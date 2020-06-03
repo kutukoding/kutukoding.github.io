@@ -446,48 +446,45 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div class="bgc-white bd bdrs-3 pl-15 pr-15 mB-20">
-                  <div class="tbl-search p-10">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="dateInput" class="col-form-label">Start Date</label>
-                          <div>
-                            <input type="text" class="start-date form-control">
-                          </div>
+                <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                  <div class="tbl-search row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+                        <label for="searchDate" class="col-sm-3 col-form-label">Date</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="start-date form-control" id="searchDate">
                         </div>
                       </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="dateInput" class="col-form-label">End Date</label>
-                          <div>
-                            <input type="text" class="end-date form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="statusInput" class="col-form-label">Status</label>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group row">
+                        <label for="searchStatus" class="col-sm-3 col-form-label">Status</label>
+                        <div class="col-sm-9">
                           <div class="select2--custom">
                             <select id="statusInput" class="form-control js-select2" placeholder="Select Status" style="width: 100%;">
                               <option value="All">All Status</option>
                               <option value="Solved">Solved</option>
-                              <option value="Unolved">Unolved</option>
+                              <option value="Unsolved">Unsolved</option>
                               <option value="Unresponse">Unresponse</option>
                             </select>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label for="assigneInput" class="col-form-label">Category</label>
-                          <div class="select2--custom">
-                            <select id="assigneInput" class="form-control js-select2" placeholder="Select Category" style="width: 100%;">
-                              <option value="All">All Category</option>
-                              <option value="Tissue">Tissue</option>
-                              <option value="Cleanliness">Cleanliness</option>
-                              <option value="Water">Water</option>
-                            </select>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Category</label>
+                        <div class="col-sm-9">
+                            <div class="select2--custom">
+                              <select id="assigneInput" class="form-control js-select2" placeholder="Select Category" style="width: 100%;">
+                                <option value="All">All Category</option>
+                                <option value="Tissue">Tissue</option>
+                                <option value="Cleanliness">Cleanliness</option>
+                                <option value="Water">Water</option>
+                              </select>
                           </div>
                         </div>
                       </div>
@@ -640,7 +637,7 @@
                       </tbody>
                     </table>
                   </div>
-                  <div class="tbl-pagination p-10">
+                  <div class="tbl-pagination">
                     <div class="row">
                       <div class="col-md-4">
                         <select id="paginationLimit" class="pagination-limit">
@@ -740,8 +737,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Response</button>
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Response</button>
         </div>
       </div>
     </div>
