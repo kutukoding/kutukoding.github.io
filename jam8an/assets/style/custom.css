@@ -77,7 +77,7 @@
     cursor: pointer;
 }
 
-/* table */
+/* table (normal table)*/
 .table td {
     padding: 1.25rem .75rem !important;
     border: none !important;
@@ -85,6 +85,14 @@
 .table th {
     padding: .75rem !important;
     border: none !important;
+}
+/* tabel search & pagination (background) */
+.tbl-search, 
+.tbl-pagination {
+    /* background-color: #00CAE8; */
+    background: rgb(0,201,231);
+    background: linear-gradient(150deg, rgba(0,201,231,1) 0%, rgba(17,191,131,1) 200%);
+    color: #fff;
 }
 /* custom pagination (without datatable) */
 .tbl-pagination .pagination-limit {
@@ -95,7 +103,7 @@
     margin-right: 5px;
 }
 .tbl-pagination .pagination-status {
-    color: #464e5f;
+    color: #fff;
     font-size: 12px;
 }
 .tbl-pagination .pagination .page-link {
@@ -114,8 +122,15 @@
     box-shadow: none;
 }
 .tbl-pagination .pagination .page-item.active .page-link {
-    background-color: #00CAE8;
+    background-color: #00CAE8 !important;
     color: #fff;
+    font-weight: 500;
+}
+.page-item .page-link {
+    background-color: #ecf1f6 !important;
+}
+.page-item .page-link:hover {
+    background-color: #fff !important;
 }
 
 

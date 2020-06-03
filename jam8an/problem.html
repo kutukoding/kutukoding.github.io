@@ -447,46 +447,48 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 pl-15 pr-15 mB-20">
-                  <div class="table-search row p-10">
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="dateInput" class="col-form-label">Start Date</label>
-                        <div>
-                          <input type="text" class="start-date form-control">
+                  <div class="tbl-search p-10">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="dateInput" class="col-form-label">Start Date</label>
+                          <div>
+                            <input type="text" class="start-date form-control">
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="dateInput" class="col-form-label">End Date</label>
-                        <div>
-                          <input type="text" class="end-date form-control">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="dateInput" class="col-form-label">End Date</label>
+                          <div>
+                            <input type="text" class="end-date form-control">
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="statusInput" class="col-form-label">Status</label>
-                        <div class="select2--custom">
-                          <select id="statusInput" class="form-control js-select2" placeholder="Select Status" style="width: 100%;">
-                            <option value="All">All Status</option>
-                            <option value="Solved">Solved</option>
-                            <option value="Unolved">Unolved</option>
-                            <option value="Unresponse">Unresponse</option>
-                          </select>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="statusInput" class="col-form-label">Status</label>
+                          <div class="select2--custom">
+                            <select id="statusInput" class="form-control js-select2" placeholder="Select Status" style="width: 100%;">
+                              <option value="All">All Status</option>
+                              <option value="Solved">Solved</option>
+                              <option value="Unolved">Unolved</option>
+                              <option value="Unresponse">Unresponse</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="assigneInput" class="col-form-label">Category</label>
-                        <div class="select2--custom">
-                          <select id="assigneInput" class="form-control js-select2" placeholder="Select Category" style="width: 100%;">
-                            <option value="All">All Category</option>
-                            <option value="Tissue">Tissue</option>
-                            <option value="Cleanliness">Cleanliness</option>
-                            <option value="Water">Water</option>
-                          </select>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="assigneInput" class="col-form-label">Category</label>
+                          <div class="select2--custom">
+                            <select id="assigneInput" class="form-control js-select2" placeholder="Select Category" style="width: 100%;">
+                              <option value="All">All Category</option>
+                              <option value="Tissue">Tissue</option>
+                              <option value="Cleanliness">Cleanliness</option>
+                              <option value="Water">Water</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -638,35 +640,37 @@
                       </tbody>
                     </table>
                   </div>
-                  <div class="tbl-pagination row p-10">
-                    <div class="col-md-4">
-                      <select id="paginationLimit" class="pagination-limit">
-                        <option value="5">5</option>
-                        <option value="10" selected>10</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                      </select> <span class="pagination-status">Showing 1 to 10 of 12</span>
-                    </div>
-                    <div class="col-md-8 text-center text-md-right">
-                      <nav class="d-inline-block">
-                        <ul class="pagination">
-                          <li class="page-item disabled">
-                            <span class="page-link">Prev</span>
-                          </li>
-                          <li class="page-item active disabled">
-                            <a class="page-link" href="#">1</a>
-                          </li>
-                          <li class="page-item" aria-current="page">
-                            <a class="page-link" href="#">2</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                          </li>
-                        </ul>
-                      </nav>
+                  <div class="tbl-pagination p-10">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select id="paginationLimit" class="pagination-limit">
+                          <option value="5">5</option>
+                          <option value="10" selected>10</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select> <span class="pagination-status">Showing 1 to 10 of 12</span>
+                      </div>
+                      <div class="col-md-8 text-center text-md-right">
+                        <nav class="d-inline-block">
+                          <ul class="pagination">
+                            <li class="page-item disabled">
+                              <span class="page-link">Prev</span>
+                            </li>
+                            <li class="page-item active disabled">
+                              <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item" aria-current="page">
+                              <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                              <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                              <a class="page-link" href="#">Next</a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
                     </div>
                   </div>
                 </div>
