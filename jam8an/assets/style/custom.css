@@ -288,9 +288,9 @@
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-    padding: 5px 11px;
+    padding: 5px 11px !important;
     border: none !important;
-    margin-right: 5px;
+    margin-right: 5px !important;
 }
 
 /* Change color sorting datatable */
