@@ -160,8 +160,18 @@
     color: #fff;
     font-weight: 500;
 }
+/* custom width table*/
 .tbl-date {
     min-width: 145px;
+}
+.tbl-star {
+    min-width: 105px;
+}
+.tbl-truncate {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .page-item .page-link {
     /* background-color: #ecf1f6 !important; */
@@ -205,6 +215,17 @@
 }
 .checked {
     color: orange;
+}
+
+/* popup response */
+.message-head {
+    background: #ecf1f6;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.message-head p {
+    margin-bottom: 0;
 }
 
 /* ---- RESPONSIVE ----- */
