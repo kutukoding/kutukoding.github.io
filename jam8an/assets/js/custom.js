@@ -18,9 +18,50 @@ var custom = function () {
     });
   }
 
+  var select2 = function () {
+    $('.js-select2').select2();
+  }
+
+  var select2_assigne = function () {
+    $('.js-select2--asigne').select2({
+      templateSelection: function (data) {
+        var r = data.text.split('|');
+        var $result = $(
+          `
+          <div class="avatar-select2-selected">
+            <div class="avatar-select2-selected__image">
+              <img src="${r[0]}" alt="${r[1]}">
+            </div>
+            <span class="avatar-select2-selected__name">${r[1]}</span>
+          </div>
+          `
+        );
+        return $result;
+      },
+      templateResult: function (data) {
+        var r = data.text.split('|');
+        var $result = $(
+          `
+          <div class="row">
+            <div class="col-md-1">
+              <div class="avatar-select2">
+                <img class="w-2r bdrs-50p" src="${r[0]}" alt="${r[1]}">
+              </div>
+            </div>
+            <div class="col-md-11 d-flex align-items-center"> ${r[1]} </div>
+          </div>
+          `
+        );
+        return $result;
+      }
+    });
+  }
+
   return {
-    init: function() {
+    init: function () {
       datatable();
+      select2();
+      select2_assigne();
     }
   }
 }();
