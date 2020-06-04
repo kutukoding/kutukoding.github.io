@@ -28,6 +28,9 @@
     color: #72777a !important;
     /* font-weight: 500 !important; */
 }
+.sidebar-menu>li>a .icon-holder {
+    color: #00CAE8 !important;
+}
 
 .sidebar-menu>li.dropdown ul.dropdown-menu>li>a {
     padding: 5px 15px !important;
@@ -52,7 +55,8 @@
 }
 
 .sidebar-menu li.actived a {
-    color: #313435 !important;
+    /* color: #313435 !important; */
+    color: #00CAE8! important;
     font-weight: 600 !important;
 }
 .sidebar-menu>li.dropdown ul.dropdown-menu>li.actived a {
