@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Toilet</title>
+
+  <style>
+    #loader {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background: #fff;
+      z-index: 90000;
+    }
+
+    #loader.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      background-color: #333;
+      border-radius: 100%;
+      -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0)
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+  </style>
+  <link href="assets/static/bundle/style/style.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Datatable CSS -->
+  <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="assets/style/custom.css" rel="stylesheet">
+</head>
+
+<body class="app">
+  <!-- @TOC -->
+  <!-- =================================================== -->
+  <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+  <!-- @Page Loader -->
+  <!-- =================================================== -->
+  <div id='loader'>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function load() {
+      const loader = document.getElementById('loader');
+      setTimeout(function () {
+        loader.classList.add('fadeOut');
+      }, 300);
+    });
+  </script>
+
+  <!-- @App Content -->
+  <!-- =================================================== -->
+  <div>
+    <!-- #Left Sidebar ==================== -->
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <!-- ### $Sidebar Header ### -->
+        <div class="sidebar-logo">
+          <div class="peers ai-c fxw-nw">
+            <div class="peer peer-greed">
+              <a class="sidebar-link td-n" href="dashboard.html">
+                <div class="peers ai-c jc-c">
+                  <img src="assets/img/logo_jam8and@2x.png" alt="logo jam8and" class="logo-header">
+                  <img src="assets/img/logo_j.png" alt="logo jam8and" class="logo-mini">
+                </div>
+              </a>
+            </div>
+            <div class="peer">
+              <div class="mobile-toggle sidebar-toggle">
+                <a href="" class="td-n">
+                  <i class="ti-arrow-circle-left"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ### $Sidebar Menu ### -->
+        <ul class="sidebar-menu scrollable pos-r">
+          <li class="nav-item mT-30">
+            <a class="sidebar-link" href="dashboard.html">
+              <span class="icon-holder">
+                <i class="ti-home"></i>
+              </span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown open">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="ti-harddrives"></i>
+              </span>
+              <span class="title">Master Data</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="actived">
+                <a class='sidebar-link' href="#">Toilet</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="cleaner.html">Cleaner</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="user.html">User</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="subscription.html">Subscription Plan</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class='sidebar-link' href="#">
+              <span class="icon-holder">
+                <i class="ti-calendar"></i>
+              </span>
+              <span class="title">Schedule</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="ti-desktop"></i>
+              </span>
+              <span class="title">Monitoring</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="overview.html">Overview</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="problem.html">Problem</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="complain.html">Complain</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="rating.html">Rating</a>
+              </li>
+              <!-- <li>
+                  <a class='sidebar-link' href="absence.html">Monitoring Absence</a>
+                </li> -->
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="ti-user"></i>
+              </span>
+              <span class="">Profile</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="profile.html">My Profile</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="upgrade.html">Upgrade Plan</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class='sidebar-link' href="index.html">
+              <span class="icon-holder">
+                <i class="ti-power-off"></i>
+              </span>
+              <span class="">Logout</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
+              <span class="icon-holder">
+                <i class="c-orange-500 ti-video-clapper"></i>
+              </span>
+              <span class="title">Tutorial</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="clean.html">How to Clean</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="repair.html">How to Repair</a>
+              </li>
+            </ul>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- #Main ============================ -->
+    <div class="page-container">
+      <!-- ### $Topbar ### -->
+      <div class="header navbar">
+        <div class="header-container">
+          <ul class="nav-left">
+            <li>
+              <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
+                <i class="ti-menu"></i>
+              </a>
+            </li>
+            <!-- <li class="search-box">
+              <a class="search-toggle no-pdd-right" href="javascript:void(0);">
+                <i class="search-icon ti-search pdd-right-10"></i>
+                <i class="search-icon-close ti-close pdd-right-10"></i>
+              </a>
+            </li>
+            <li class="search-input">
+              <input class="form-control" type="text" placeholder="Search...">
+            </li> -->
+          </ul>
+          <ul class="nav-right">
+            <li class="notifications dropdown">
+              <span class="counter bgc-red">3</span>
+              <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+                <i class="ti-bell"></i>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li class="pX-20 pY-15 bdB">
+                  <i class="ti-bell pR-10"></i>
+                  <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                </li>
+                <li>
+                  <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+                    <li>
+                      <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                        <div class="peer mR-15">
+                          <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                        </div>
+                        <div class="peer peer-greed">
+                          <span>
+                            <span class="fw-500">John Doe</span>
+                            <span class="c-grey-600">solving <span class="text-dark">complains #C23341</span>
+                            </span>
+                          </span>
+                          <p class="m-0">
+                            <small class="fsz-xs">5 mins ago</small>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                        <div class="peer mR-15">
+                          <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                        </div>
+                        <div class="peer peer-greed">
+                          <span>
+                            <span class="fw-500">John Doe</span>
+                            <span class="c-grey-600">response <span class="text-dark">complains #C23341</span>
+                            </span>
+                          </span>
+                          <p class="m-0">
+                            <small class="fsz-xs">7 mins ago</small>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
+                        <div class="peer mR-15">
+                          <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+                        </div>
+                        <div class="peer peer-greed">
+                          <span>
+                            <span class="fw-500">Lee Doe</span>
+                            <span class="c-grey-600">writing new <span class="text-dark">problems #P1001</span>
+                            </span>
+                          </span>
+                          <p class="m-0">
+                            <small class="fsz-xs">10 mins ago</small>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pX-20 pY-15 ta-c bdT">
+                  <span>
+                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                <div class="peer mR-10">
+                  <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                </div>
+                <div class="peer">
+                  <span class="fsz-sm c-grey-900">John Doe</span>
+                </div>
+              </a>
+              <ul class="dropdown-menu fsz-sm">
+                <li>
+                  <a href="upgrade.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-upload mR-10"></i>
+                    <span>Upgrade Plan</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="profile.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-user mR-10"></i>
+                    <span>Profile</span>
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="index.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-power-off mR-10"></i>
+                    <span>Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ### $App Screen Content ### -->
+      <main class='main-content bgc-grey-100'>
+        <div id='mainContent'>
+          <div class="container-fluid">
+            <div class="d-flex justify-content-between mT-10 mB-30">
+              <div class="left-header d-flex align-items-center">
+                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Toilet</h4>
+                <nav aria-label="breadcrumb ml-3">
+                  <ol class="breadcrumb breadcrumb--transparent mb-0 p-0">
+                    <li class="breadcrumb-item"><a href="dashboard.html"><i class="ti-home"></i></a></li>
+                    <li class="breadcrumb-item">Master Data</li>
+                    <li class="breadcrumb-item active" aria-current="page">Toilet</li>
+                  </ol>
+                </nav>
+              </div>
+              <a href="form-cleaner.html" class="btn btn-primary">Add Toilet</a>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                  <table class="table table-striped js-datatable nowrap" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Name Toilet</th>
+                        <th>City</th>
+                        <th>Floor Number</th>
+                        <th>Toilet Type</th>
+                        <th>Assigne To</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mall MX</td>
+                        <td>Malang</td>
+                        <td>1</td>
+                        <td>Toilet Seat</td>
+                        <td>
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/23.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 3 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mall MX</td>
+                        <td>Malang</td>
+                        <td>2</td>
+                        <td>Toilet Seat</td>
+                        <td>
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__initial">
+                                <span>MA</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 3 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Block M</td>
+                        <td>Jakarta</td>
+                        <td>1</td>
+                        <td>Toilet Seat</td>
+                        <td>
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mall MX</td>
+                        <td>Malang</td>
+                        <td>1</td>
+                        <td>Toilet Seat</td>
+                        <td>
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/23.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 3 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mall MX</td>
+                        <td>Malang</td>
+                        <td>2</td>
+                        <td>Toilet Seat</td>
+                        <td>
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__initial">
+                                <span>MA</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 3 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Block M</td>
+                        <td>Jakarta</td>
+                        <td>1</td>
+                        <td>Toilet Seat</td>
+                        <td>
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/11.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td>
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ### $App Screen Footer ### -->
+      <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+        <span>Copyright © 2020. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script>
+  <script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
+
+  <!-- Jquery Min JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Datatables & Responsive Datatable -->
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+
+  <!-- Bootstrap Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- SweetAlert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!-- Custom Js -->
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.deleteRecord').click(function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!"
+        })
+      })
+    })
+  </script>
+
+</body>
+
+</html>
