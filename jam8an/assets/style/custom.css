@@ -122,6 +122,10 @@
     border-radius: 24px !important;
     cursor: pointer;
 }
+/* custom thead datatable (supaya gak tabrakan dengan arrow sort by) */
+.table.dataTable th {
+    padding-right: 1.25rem !important;
+}
 
 /* table (normal table)*/
 .table td {
@@ -297,14 +301,20 @@
 .js-datatable thead th {
     position: relative;
     background-image: none !important;
+    vertical-align: middle !important;
 }
   
 .js-datatable thead th.sorting:after,
 .js-datatable thead th.sorting_asc:after,
 .js-datatable thead th.sorting_desc:after {
     position: absolute !important;
-    top: 12px !important;
+    top: 0 !important;
+    bottom: 0 !important;
     right: 8px !important;
+    margin: auto;
+    height: 8px;
+    width: 8px;
+    line-height: 1;
     display: block !important;
     font-family: FontAwesome !important;
 }
@@ -321,6 +331,7 @@
 .js-datatable thead th.sorting_desc:after {
     content: "\f0dd" !important;
     color: #00CAE8;
+    line-height: 0;
 }
 
 /* border-radius */
@@ -356,6 +367,11 @@
     .header .header-container .nav-left .notifications .dropdown-menu, 
     .header .header-container .nav-right .notifications .dropdown-menu {
         right: -120px !important;
+    }
+
+    /* sidebar on mobile */
+    body.is-collapsed {
+        overflow: hidden;
     }
 
     /* table padding */
