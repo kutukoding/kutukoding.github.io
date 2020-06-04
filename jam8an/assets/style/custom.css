@@ -45,7 +45,10 @@
     border: none;
 }
 .sidebar-menu li.dropdown.open > a {
-    /* border-right: 2px solid #00CAE8; */
+    border-right: 2px solid #00CAE8;
+}
+.sidebar:hover li.dropdown.open > a {
+    border-right: none;
 }
 
 .sidebar-menu li.actived a {
@@ -377,10 +380,12 @@
     margin:0;
 }
 
-.is-collapsed .logo-header {
+.is-collapsed .logo-header,
+.sidebar:hover .logo-header {
     display: block;
 }
-.is-collapsed .logo-mini {
+.is-collapsed .logo-mini,
+.sidebar:hover .logo-mini {
     display: none;
 }
 
