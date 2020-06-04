@@ -108,38 +108,15 @@
     <!-- #Left Sidebar ==================== -->
     <div class="sidebar">
       <div class="sidebar-inner">
-        <!-- ### $Sidebar Header ### -->
-        <div class="sidebar-logo">
-          <div class="peers ai-c fxw-nw">
-            <div class="peer peer-greed">
-              <a class="sidebar-link td-n" href="dashboard.html">
-                <div class="peers ai-c jc-c">
-                  <div class="peer">
-                    <div class="logo">
-                      <img src="assets/static/images/logo.png" alt="logo" width="138">
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="peer">
-              <div class="mobile-toggle sidebar-toggle">
-                <a href="" class="td-n">
-                  <i class="ti-arrow-circle-left"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- ### $Sidebar Menu ### -->
         <ul class="sidebar-menu scrollable pos-r">
-          <li class="nav-item mT-30">
+          <li class="nav-item mT-30 actived">
             <a class="sidebar-link" href="dashboard.html">
               <span class="icon-holder">
                 <i class="c-blue-500 ti-home"></i>
               </span>
-              <span class="">Dashboard</span>
+              <span class="title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item dropdown">
@@ -147,7 +124,7 @@
               <span class="icon-holder">
                 <i class="c-blue-500 ti-harddrives"></i>
               </span>
-              <span class="">Master Data</span>
+              <span class="title">Master Data</span>
               <span class="arrow">
                 <i class="ti-angle-right"></i>
               </span>
@@ -172,15 +149,15 @@
               <span class="icon-holder">
                 <i class="c-blue-500 ti-calendar"></i>
               </span>
-              <span class="">Schedule</span>
+              <span class="title">Schedule</span>
             </a>
           </li>
-          <li class="nav-item dropdown open">
+          <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="c-blue-500 ti-stats-up"></i>
               </span>
-              <span class="">Monitoring</span>
+              <span class="title">Monitoring</span>
               <span class="arrow">
                 <i class="ti-angle-right"></i>
               </span>
@@ -189,7 +166,7 @@
               <li>
                 <a class='sidebar-link' href="overview.html">Overview</a>
               </li>
-              <li class="actived">
+              <li>
                 <a class='sidebar-link' href="problem.html">Problem</a>
               </li>
               <li>
@@ -208,7 +185,7 @@
               <span class="icon-holder">
                 <i class="c-orange-500 ti-video-clapper"></i>
               </span>
-              <span class="">Tutorial</span>
+              <span class="title">Tutorial</span>
               <span class="arrow">
                 <i class="ti-angle-right"></i>
               </span>
@@ -232,6 +209,13 @@
       <div class="header navbar">
         <div class="header-container">
           <ul class="nav-left">
+            <li>
+              <div class="logo">
+                <a href="dashboard.html">
+                  <img src="assets/static/images/logo.png" alt="logo" width="138">
+                </a>
+              </div>
+            </li>
             <li>
               <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
                 <i class="ti-menu"></i>

@@ -1,3 +1,19 @@
+.header {
+    left: 0;
+    width: 100% !important;
+}
+.header .logo {
+    width: 205px;
+    padding: 0 1.5rem;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    transition: width .2s;
+}
+/* replace style */
+.sidebar {
+    margin-top: 66px;
+}
 /* child on sidedbar */
 .sidebar-menu>li.dropdown ul.dropdown-menu {
     padding-left: 55px !important;
