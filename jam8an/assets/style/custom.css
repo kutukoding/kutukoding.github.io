@@ -361,6 +361,29 @@
     color: #80808f;
 }
 
+/* logo */
+.logo-header {
+    height: 43px;
+    margin: 11px 0;
+    display: none;
+}
+.logo-mini {
+    background: #00CAE8;
+    color: #FFF;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    font-size: 48px;
+    margin:0;
+}
+
+.is-collapsed .logo-header {
+    display: block;
+}
+.is-collapsed .logo-mini {
+    display: none;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
     /* notifikasi */
