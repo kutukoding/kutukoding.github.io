@@ -463,21 +463,17 @@
                     <div class="form-group row">
                       <label for="toiletTypeInput" class="col-sm-2 col-form-label">Toilet Type</label>
                       <div class="col-sm-10 d-flex align-items-center">
-                        <div class="select2--custom d-inline-block">
-                          <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                            <input type="checkbox" id="toiletTypeInput" name="inputCheckboxesCall" value="Seat Toilet" class="peer">
-                            <label for="toiletTypeInput" class=" peers peer-greed js-sb ai-c">
-                              <span class="peer peer-greed">Seat Toilet</span>
-                            </label>
-                          </div>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="radio" id="toiletTypeInput" name="inputCheckboxesCall" value="Seat Toilet" checked>
+                            Seat Toilet
+                          </label>
                         </div>
-                        <div class="ml-3 select2--custom d-inline-block">
-                          <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                            <input type="checkbox" id="toiletTypeInput" name="inputCheckboxesCall" value="Squat Toilet" class="peer">
-                            <label for="toiletTypeInput" class=" peers peer-greed js-sb ai-c">
-                              <span class="peer peer-greed">Squat Toilet</span>
-                            </label>
-                          </div>
+                        <div class="form-check ml-3">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="radio" id="toiletTypeInput" name="inputCheckboxesCall" value="Squat Toilet">
+                            Squat Toilet
+                          </label>
                         </div>
                       </div>
                     </div>
