@@ -140,6 +140,14 @@
     padding: 1rem .75rem !important;
     border: none !important;
 }
+/* --start: adjustment untuk datatable dengan responsive */
+.table.dtr-inline.collapsed td.dtr-control {
+    padding-left: 35px !important;
+}
+.table.dtr-inline.collapsed td.dtr-control:before {
+    left: 10px !important;
+}
+/* --end: adjustment untuk datatable dengan responsive */
 .table th {
     padding: .75rem !important;
     border: none !important;
@@ -199,6 +207,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 0; /* untuk handle data klo pakai <p> */
 }
 .page-item .page-link {
     /* background-color: #ecf1f6 !important; */

@@ -7,6 +7,7 @@ var custom = function () {
     $('.js-datatable').DataTable({
       dom: '<"top">rt<"bottom"lip><"clear">',
       searching: false,
+      responsive: true,
       language: {
         paginate: {
           previous: "Prev"
