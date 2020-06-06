@@ -57,11 +57,54 @@ var custom = function () {
     });
   }
 
+  var leaflet_map = function () {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+    };
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+    
+    // get current location event
+    navigator.geolocation.getCurrentPosition(function(location) {
+      var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+    
+      var map = L.map('map').setView(latlng, 15)
+
+      // set theme map 
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3'],
+      }).addTo(map);
+      
+      // set latitude and longtitude in textbox
+      document.getElementById('latitude').value = latlng.lat;
+      document.getElementById('longitude').value = latlng.lng;
+
+      // set marker on current location
+      var marker = L.marker(latlng).addTo(map);
+      
+      // function for change location marker after click in another location
+      map.on('click', function (e) {
+        if (marker) {
+          map.removeLayer(marker);
+        }
+        marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map)
+        document.getElementById('latitude').value = e.latlng.lat;
+        document.getElementById('longitude').value = e.latlng.lng;
+      })
+    }, error, options);
+  }
+
   return {
     init: function () {
       datatable();
       select2();
       select2_assigne();
+      leaflet_map();
     }
   }
 }();

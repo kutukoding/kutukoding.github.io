@@ -72,6 +72,9 @@
   <!-- Select2 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
+  <!-- Leaflet Map Js -->
+  <link data-require="leaflet@0.7.3" data-semver="0.7.3" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
   <!-- Custom CSS -->
   <link href="assets/style/custom.css" rel="stylesheet">
 </head>
@@ -406,6 +409,12 @@
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                   <form>
                     <div class="form-group row">
+                      <label for="nameInput" class="col-sm-2 col-form-label">Select Location</label>
+                      <div class="col-sm-10">
+                        <div id="map"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
                       <label for="nameInput" class="col-sm-2 col-form-label">Name Toilet</label>
                       <div class="col-sm-10">
                         <input type="text" class="form-control" id="nameInput">
@@ -447,7 +456,7 @@
                         <div class="row">
                           <label for="longitude" class="col-sm-4 col-form-label">Longitude</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="longitude">
+                            <input type="text" class="form-control" id="longitude" disabled>
                           </div>
                         </div>
                       </div>
@@ -455,7 +464,7 @@
                         <div class="row">
                           <label for="latitude" class="col-sm-4 col-form-label">Latitude</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="floorInput">
+                            <input type="text" class="form-control" id="latitude" disabled>
                           </div>
                         </div>
                       </div>
@@ -571,6 +580,9 @@
 
   <!-- Select2 Js -->
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+  <!-- Leaflet Map Js -->
+  <script data-require="leaflet@0.7.3" data-semver="0.7.3" src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 
   <!-- Custom Js -->
   <script src="assets/js/custom.js"></script>
