@@ -75,10 +75,8 @@
   <!-- Load Leaflet Map Css from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 
-
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css" integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g==" crossorigin="">
-
 
   <!-- Custom CSS -->
   <link href="assets/style/custom.css" rel="stylesheet">
@@ -601,15 +599,6 @@
 
   <script>
     $(document).ready(function () {
-      $('.deleteRecord').click(function () {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: "Yes, delete it!"
-        })
-      })
 
       // JS for hide and show other fasilities input
       $(".js-others-fasilities").change(function () {
