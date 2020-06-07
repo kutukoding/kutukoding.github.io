@@ -58,6 +58,8 @@ var custom = function () {
   }
 
   var leaflet_map = function () {
+
+    // enableHighAccuracy to get high accuracy location (working on mobile device)
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -66,36 +68,67 @@ var custom = function () {
     function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
-    
-    // get current location event
-    navigator.geolocation.getCurrentPosition(function(location) {
+
+    // navigator for get current position
+    navigator.geolocation.getCurrentPosition(function (location) {
       var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
-    
+
+      // set view current position
       var map = L.map('map').setView(latlng, 15)
 
-      // set theme map 
       L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-        // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         subdomains:['mt0','mt1','mt2','mt3'],
       }).addTo(map);
-      
-      // set latitude and longtitude in textbox
+
+      var geocodeService = L.esri.Geocoding.geocodeService();
+      var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+
+      // set data map in textbox
       document.getElementById('latitude').value = latlng.lat;
       document.getElementById('longitude').value = latlng.lng;
+      document.getElementById('addressInput').value = latlng.address;
 
       // set marker on current location
       var marker = L.marker(latlng).addTo(map);
+
+      // create new layer group for save search result
+      var results = new L.LayerGroup().addTo(map);
       
-      // function for change location marker after click in another location
+      // event click for get data on map
       map.on('click', function (e) {
-        if (marker) {
-          map.removeLayer(marker);
+        // geocodeService.reverse() => to get data location as address latitude and longtitude
+        geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+          if (error) {
+            return;
+          }
+
+          // clear marker on map before create marker
+          if (marker) {
+            results.clearLayers();
+            map.removeLayer(marker);
+          }
+
+          // to add marker and popup result address
+          marker = L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
+
+          document.getElementById('latitude').value = result.latlng.lat;
+          document.getElementById('longitude').value = result.latlng.lng;
+          document.getElementById('addressInput').value = result.address.Match_addr;
+        });
+      });
+
+      // event get result from search
+      searchControl.on('results', function (data) {
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+          results.addLayer(L.marker(data.results[i].latlng));
+          document.getElementById('latitude').value = data.results[i].latlng.lat;
+          document.getElementById('longitude').value = data.results[i].latlng.lng;
+          document.getElementById('addressInput').value = data.results[i].properties.Match_addr;
         }
-        marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map)
-        document.getElementById('latitude').value = e.latlng.lat;
-        document.getElementById('longitude').value = e.latlng.lng;
-      })
+      });
+
     }, error, options);
   }
 
