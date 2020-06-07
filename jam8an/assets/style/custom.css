@@ -580,16 +580,18 @@
     background-color: #f8f8f8;
 }
 
-.leaflet-popup {
-    max-width: 300px;
-}
-
-.leaflet-popup-content {
-    max-width: 85%;
-}
 
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
+
+    /* Custom Map Library leaflet */
+    .leaflet-popup {
+        max-width: 200px;
+    }
+
+    .leaflet-popup-content {
+        max-width: 80%;
+    }
 
     /* notifikasi */
     .header .header-container .nav-left .notifications .dropdown-menu,
