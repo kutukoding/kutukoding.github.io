@@ -580,6 +580,10 @@
     background-color: #f8f8f8;
 }
 
+.layers--grafic {
+    box-shadow: 0 0 3px 0 rgba(82, 63, 105, .05);
+    border-radius: 8px;
+}
 
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
