@@ -682,7 +682,34 @@
   <script src="assets/js/custom.js"></script>
 
   <script>
+    function markerOnClick() {
+      var geocodeService = L.esri.Geocoding.geocodeService();
+      var nameToilet = this.getPopup()._content
+      geocodeService.reverse().latlng(this.getLatLng()).run(function (error, result) {
+        console.log(result)
+        document.getElementById('latitude').value = result.latlng.lat;
+        document.getElementById('longitude').value = result.latlng.lng;
+        document.getElementById('addressInput').value = result.address.Match_addr;
+        document.getElementById('nameInput').value = nameToilet;
+      })
+    }
     $(document).ready(function () {
+
+      // Map
+      var map = L.map('map').setView([-6.218205, 106.845002], 11);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+
+      L.marker([-6.218205, 106.845002]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Mangarai.')
+      L.marker([-6.216211, 106.844208]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Tebet.')
+      L.marker([-6.215507, 106.845978]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet SIN Herbal.')
+      L.marker([-6.181782, 106.894435]).on('click', markerOnClick).addTo(map).bindPopup('Mall Pulo Gadung.')
+      L.marker([-6.210907, 106.900198]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Jatinegara Kaum.')
+      L.marker([-6.160774, 106.762844]).on('click', markerOnClick).addTo(map).bindPopup('Mall Kedoya.')
+      L.marker([-6.246714, 106.710016]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Paninggilan.')
 
       // JS for hide and show other fasilities input
       $(".js-others-fasilities").change(function () {

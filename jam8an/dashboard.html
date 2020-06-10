@@ -657,18 +657,86 @@
   <script src="assets/js/custom.js"></script>
   <script>
     $(document).ready(function () {
-      var map = L.map('map').setView([-6.218205, 106.845002], 16);
+      var map = L.map('map').setView([-6.218205, 106.845002], 11);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      L.marker([-6.218205, 106.845002]).addTo(map)
-      L.marker([-6.216211, 106.844208]).addTo(map)
-      L.marker([-6.215507, 106.845978]).addTo(map)
-      L.marker([-6.218749, 106.838736]).addTo(map)
-      L.marker([-6.221522, 106.838028]).addTo(map)
-      L.marker([-6.215784, 106.847942]).addTo(map)
+      L.marker([-6.218205, 106.845002]).addTo(map).bindPopup('Public Toilet Mangarai.')
+      L.marker([-6.216211, 106.844208]).addTo(map).bindPopup('Public Toilet Tebet.')
+      L.marker([-6.215507, 106.845978]).addTo(map).bindPopup('Public Toilet SIN Herbal.')
+      L.marker([-6.181782, 106.894435]).addTo(map).bindPopup('Mall Pulo Gadung.')
+      L.marker([-6.210907, 106.900198]).addTo(map).bindPopup('Public Toilet Jatinegara Kaum.')
+      L.marker([-6.160774, 106.762844]).addTo(map).bindPopup('Mall Kedoya.')
+      L.marker([-6.246714, 106.710016]).addTo(map).bindPopup('Public Toilet Paninggilan.')
+
+      new Chart('jsChartUserUpgrader', {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [{
+            label: 'User',
+            backgroundColor: 'rgb(54, 162, 235)',
+            borderColor: 'rgb(54, 162, 235)',
+            data: [
+              10,
+              12,
+              15,
+              22,
+              27,
+              30,
+              40
+            ],
+            fill: false,
+          }, {
+            label: 'Upgrader',
+            fill: false,
+            backgroundColor: 'rgb(76, 175, 80)',
+            borderColor: 'rgb(76, 175, 80)',
+            data: [
+              8,
+              10,
+              12,
+              15,
+              27,
+              28,
+              30
+            ],
+          }]
+        },
+        options: {
+          responsive: true,
+          title: {
+            display: false,
+            text: 'Users vs Upgrader'
+          },
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Month'
+              }
+            }],
+            yAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Value'
+              }
+            }]
+          }
+        }
+      })
     })
   </script>
 </body>
