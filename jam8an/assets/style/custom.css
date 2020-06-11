@@ -435,7 +435,7 @@
 .logo-header {
     height: 43px;
     margin: 11px 0;
-    display: none;
+    display: block;
 }
 
 .logo-mini {
@@ -446,13 +446,14 @@
     text-align: center;
     font-size: 48px;
     margin: 0;
+    display: none;
 }
 
-.sidebar:hover .logo-header {
+.is-collapsed .sidebar:hover .logo-header {
     display: block;
 }
 
-.sidebar:hover .logo-mini {
+.is-collapsed .sidebar:hover .logo-mini {
     display: none;
 }
 
