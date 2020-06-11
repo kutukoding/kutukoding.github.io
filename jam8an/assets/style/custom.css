@@ -53,12 +53,20 @@
 }
 
 /* custom on minify */
+.is-collapsed .sidebar:hover li.dropdown.open>a, 
 .is-collapsed .sidebar-menu li.dropdown.open>a {
     border: none;
 }
 
-.sidebar-menu li.dropdown.open>a {
+.is-collapsed .sidebar:hover li.dropdown.open {
+    border-right: none;
+}
+.is-collapsed .sidebar-menu li.dropdown.open {
     border-right: 2px solid #00CAE8;
+}
+
+.sidebar-menu li.dropdown.open>a {
+    /* border-right: 2px solid #00CAE8; */
 }
 
 .sidebar:hover li.dropdown.open>a {
@@ -449,21 +457,16 @@
     display: none;
 }
 
+.is-collapsed .logo-mini,
 .is-collapsed .sidebar:hover .logo-header {
     display: block;
 }
 
+.is-collapsed .logo-header,
 .is-collapsed .sidebar:hover .logo-mini {
     display: none;
 }
 
-.is-collapsed .logo-header {
-    display: none;
-}
-
-.is-collapsed .logo-mini {
-    display: block;
-}
 
 /* Assigne to Table */
 .assigne {
