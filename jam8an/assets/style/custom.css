@@ -448,14 +448,20 @@
     margin: 0;
 }
 
-.is-collapsed .logo-header,
 .sidebar:hover .logo-header {
     display: block;
 }
 
-.is-collapsed .logo-mini,
 .sidebar:hover .logo-mini {
     display: none;
+}
+
+.is-collapsed .logo-header {
+    display: none;
+}
+
+.is-collapsed .logo-mini {
+    display: block;
 }
 
 /* Assigne to Table */
