@@ -595,6 +595,16 @@
     border-radius: 8px;
 }
 
+.flex-sm-column {
+    flex-direction: column !important;
+}
+
+.align-items-sm-start {
+    -webkit-box-align: flex-start !important;
+    -ms-flex-align: flex-start !important;
+    align-items: flex-start !important;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 1439px) and (min-width: 992px) {
     .logo-header,
@@ -613,6 +623,36 @@
 
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
+
+    .main-content__header,
+    .main-content__header .left-header{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .main-content__header h4 {
+        display: block;
+        border-right: 0 !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .main-content__header .left-header {
+        margin-bottom: 15px;
+    }
+    
+    .main-content__header > a,
+    .main-content__header .form-group,
+    .main-content__header .form-group .dropdown-toggle,
+    .main-content__header > .select2--custom {
+        width: 100%;
+    }
+
+    .main-content__header  > .form-group {
+        display: block;
+        margin-left: 0;
+    }
+
+
 
     /* Custom Map Library leaflet */
     .leaflet-popup {
