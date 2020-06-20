@@ -595,16 +595,6 @@
     border-radius: 8px;
 }
 
-.flex-sm-column {
-    flex-direction: column !important;
-}
-
-.align-items-sm-start {
-    -webkit-box-align: flex-start !important;
-    -ms-flex-align: flex-start !important;
-    align-items: flex-start !important;
-}
-
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 1439px) and (min-width: 992px) {
     .logo-header,
@@ -623,6 +613,15 @@
 
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
+    .flex-sm-column {
+        flex-direction: column !important;
+    }
+    
+    .align-items-sm-start {
+        -webkit-box-align: flex-start !important;
+        -ms-flex-align: flex-start !important;
+        align-items: flex-start !important;
+    }
 
     .main-content__header,
     .main-content__header .left-header{
