@@ -63,11 +63,28 @@ var custom = function () {
     }
   }
 
+  var custom_mobile_device = function() {
+    $(".sidebar-toggle").click(function() {
+      if(!$(".overlay-device").length > 0) {
+        $(".page-container").prepend("<div class='overlay-device'></div>");
+        $(".overlay-device").click(function() {
+          $(".overlay-device").remove();
+          $("body").removeClass("is-collapsed")
+        })
+      }
+    })
+
+    $(".mobile-toggle").click(function() {
+      $(".overlay-device").remove();
+    })  
+  }
+
   return {
     init: function () {
       datatable();
       select2();
       select2_assigne();
+      custom_mobile_device();
     }
   }
 }();

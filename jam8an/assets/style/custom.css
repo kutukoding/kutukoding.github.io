@@ -596,6 +596,22 @@
 }
 
 /* ---- RESPONSIVE ----- */
+@media screen and (max-width: 1439px) and (min-width: 992px) {
+    .logo-header,
+    .sidebar:hover .logo-mini,
+    .is-collapsed .logo-mini {
+        display: none;
+    }
+    
+    .logo-mini,
+    .sidebar:hover .logo-header,
+    .is-collapsed .logo-header {
+        display: block;
+    }
+
+}
+
+/* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
 
     /* Custom Map Library leaflet */
@@ -603,8 +619,25 @@
         max-width: 200px;
     }
 
+    .is-collapsed .logo-mini {
+        display: none;
+    }
+    
+    .is-collapsed .logo-header {
+        display: block;
+    }
+
     .leaflet-popup-content {
         max-width: 80%;
+    }
+
+    .overlay-device {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: rgba(101, 102, 109, 0.5);
+        position: fixed;
+        z-index: 999;
     }
 
     /* notifikasi */
