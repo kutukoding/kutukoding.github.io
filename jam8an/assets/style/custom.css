@@ -53,7 +53,7 @@
 }
 
 /* custom on minify */
-.is-collapsed .sidebar:hover li.dropdown.open>a, 
+.is-collapsed .sidebar:hover li.dropdown.open>a,
 .is-collapsed .sidebar-menu li.dropdown.open>a {
     border: none;
 }
@@ -61,6 +61,7 @@
 .is-collapsed .sidebar:hover li.dropdown.open {
     border-right: none;
 }
+
 .is-collapsed .sidebar-menu li.dropdown.open {
     border-right: 2px solid #00CAE8;
 }
@@ -595,14 +596,40 @@
     border-radius: 8px;
 }
 
+.image-area {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-area img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.logo-partner {
+    
+}
+.logo-partner-text {
+    font-size: 20px;
+    font-weight: 500;
+}
+
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 1439px) and (min-width: 992px) {
+
     .logo-header,
     .sidebar:hover .logo-mini,
     .is-collapsed .logo-mini {
         display: none;
     }
-    
+
     .logo-mini,
     .sidebar:hover .logo-header,
     .is-collapsed .logo-header {
@@ -616,7 +643,7 @@
     .flex-sm-column {
         flex-direction: column !important;
     }
-    
+
     .align-items-sm-start {
         -webkit-box-align: flex-start !important;
         -ms-flex-align: flex-start !important;
@@ -624,7 +651,7 @@
     }
 
     .main-content__header,
-    .main-content__header .left-header{
+    .main-content__header .left-header {
         flex-direction: column !important;
         align-items: flex-start !important;
     }
@@ -634,19 +661,19 @@
         border-right: 0 !important;
         margin-bottom: 5px !important;
     }
-    
+
     .main-content__header .left-header {
         margin-bottom: 15px;
     }
-    
-    .main-content__header > a,
+
+    .main-content__header>a,
     .main-content__header .form-group,
     .main-content__header .form-group .dropdown-toggle,
-    .main-content__header > .select2--custom {
+    .main-content__header>.select2--custom {
         width: 100%;
     }
 
-    .main-content__header  > .form-group {
+    .main-content__header>.form-group {
         display: block;
         margin-left: 0;
     }
@@ -661,7 +688,7 @@
     .is-collapsed .logo-mini {
         display: none;
     }
-    
+
     .is-collapsed .logo-header {
         display: block;
     }
