@@ -91,7 +91,6 @@
           - #Left Sidebar
               > $Sidebar Header
               > $Sidebar Menu
-
           - #Main
               > $Topbar
               > $App Screen Content
@@ -410,193 +409,68 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                  <div class="stepwizard my-4">
-                    <div class="stepwizard-row setup-panel">
-                      <div class="stepwizard-step">
-                        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                        <p>Lokasi</p>
-                      </div>
-                      <div class="stepwizard-step">
-                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                        <p>Plan</p>
-                      </div>
-                      <div class="stepwizard-step">
-                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                        <p>Pay</p>
-                      </div>
-                      <div class="stepwizard-step">
-                        <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                        <p>Review</p>
-                      </div>
-                    </div>
-                  </div>
-                  <form role="form" action="dashboard.html">
-                    <div class="row setup-content" id="step-1">
-                      <div class="col-md-12">
-                        <div class="form-group row">
-                          <label for="nameInput" class="col-sm-2 col-form-label">Pilih Lokasi</label>
-                          <div class="col-sm-10">
-                            <div id="map"></div>
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="nameInput" class="col-sm-2 col-form-label">Nama Toilet</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nameInput">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="addressInput" class="col-sm-2 col-form-label">Alamat Lengkap</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="addressInput">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <div class="col-md-6">
-                            <div class="row">
-                              <label for="cityInput" class="col-sm-4 col-form-label">Kota</label>
-                              <div class="col-sm-8">
-                                <div class="select2--custom">
-                                  <select id="cityInput" class="form-control js-select2" placeholder="Select City" style="width: 100%;">
-                                    <option value="Solved">Malang</option>
-                                    <option value="Solved">Surabaya</option>
-                                    <option value="Bandung">Bandung</option>
-                                    <option value="Jakarta">Jakarta</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="row">
-                              <label for="floorInput" class="col-sm-4 col-form-label">Nomor Lantai</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="floorInput">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <div class="col-md-6">
-                            <div class="row">
-                              <label for="longitude" class="col-sm-4 col-form-label">Longitude</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="longitude">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="row">
-                              <label for="latitude" class="col-sm-4 col-form-label">Latitude</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" id="latitude">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
-                      </div>
-                    </div>
-                    <div class="setup-content" id="step-2" style="width: 465px; max-width: 100%; margin:0">
-                      <div class="grid-2-column">
-                        <div class="plan plan--border">
-                          <h4 class="fsz-md fw-600">Free Plan</h4>
-                          <span class="mb-3">Rp0</span>
-                          <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
-                          <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Free Plan" checked>
-                        </div>
-                        <div class="plan plan--border">
-                          <h4 class="fsz-md fw-600">Premium Plan</h4>
-                          <span class="mb-3">Rp90.000</span>
-                          <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
-                          <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Premium Plan">
-                        </div>
-                        <div class="plan plan--border">
-                          <h4 class="fsz-md fw-600">Deluxe Plan</h4>
-                          <span class="mb-3">Rp250.000</span>
-                          <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
-                          <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Deluxe Plan">
-                        </div>
-                        <div class="plan plan--border">
-                          <h4 class="fsz-md fw-600">Extra Deluxe Plan</h4>
-                          <span class="mb-3">Rp500.000</span>
-                          <a href="#" class="fsz-sm" data-toggle="modal" data-target="#detailPlanModal">See Detail</a>
-                          <input class="form-check-input plan-checkbox" type="radio" name="planRadios" value="Deluxe Plan">
-                        </div>
-                      </div>
-                      <button class="btn btn-primary nextBtn pull-right mt-3" type="button">Next</button>
-                    </div>
-                    <div class="row setup-content" id="step-3" style="width: 465px; max-width: 100%; margin:0">
-                      <div class="col-md-12">
-                        <div class="accordion" id="accordionExample">
-                          <div class="card z-depth-0 bordered">
-                            <div class="card-header" id="headingOne">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="OVO" checked>
-                                  OVO
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                labore sustainable.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card z-depth-0 bordered">
-                            <div class="card-header" id="headingTwo">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                  <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="GO PAY" checked>
-                                  GO PAY
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                labore sustainable.
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="btn btn-primary nextBtn pull-right mt-3" type="button">Next</button>
-                      </div>
-                    </div>
-                    <div class="row setup-content" id="step-4" style="width: 465px; max-width: 100%; margin:0">
-                      <div class="col-md-12">
-                        <h4>Account Data</h4>
-                        <p>
-                          Name: <span class="fw-600">xxxxxxxxxxxxx</span>
-                        </p>
-                        <p>
-                          Email: <span class="fw-600">xxxxxxxxxxxxx</span>
-                        </p>
-                        <h4>Subscription Plan</h4>
-                        <p>
-                          Free Plan
-                        </p>
-                        <h4>Payment Method</h4>
-                        <p>
-                          GO PAY
-                        </p>
-                        <button class="btn btn-primary pull-right" type="button">Submit</button>
-                      </div>
-                    </div>
-                  </form>
                   <form id="form">
+                    <div class="form-group row">
+                      <label for="nameInput" class="col-sm-2 col-form-label">Select Location</label>
+                      <div class="col-sm-10">
+                        <div id="map"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="nameInput" class="col-sm-2 col-form-label">Name Toilet</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nameInput">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="addressInput" class="col-sm-2 col-form-label">Address Line</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="addressInput">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label for="cityInput" class="col-sm-4 col-form-label">City</label>
+                          <div class="col-sm-8">
+                            <div class="select2--custom">
+                              <select id="cityInput" class="form-control js-select2" placeholder="Select City" style="width: 100%;">
+                                <option value="Solved">Malang</option>
+                                <option value="Solved">Surabaya</option>
+                                <option value="Bandung">Bandung</option>
+                                <option value="Jakarta">Jakarta</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label for="floorInput" class="col-sm-4 col-form-label">Floor Number</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="floorInput">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label for="longitude" class="col-sm-4 col-form-label">Longitude</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="longitude">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label for="latitude" class="col-sm-4 col-form-label">Latitude</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="latitude">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div class="form-group row">
                       <label for="toiletTypeInput" class="col-sm-2 col-form-label">Toilet Type</label>
                       <div class="col-sm-10 d-flex align-items-center">
@@ -717,8 +591,7 @@
 
   <!-- Load Plugin Esri Leaflet Geocoder map from CDN -->
   <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js" integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA==" crossorigin=""></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.min.js"></script>
+
 
   <!-- Custom Js -->
   <script src="assets/js/custom.js"></script>
