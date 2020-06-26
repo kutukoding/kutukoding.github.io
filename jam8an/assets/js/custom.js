@@ -73,10 +73,26 @@ var custom = function () {
         })
       }
     })
+  }
 
+  var upload_image = function() {
     $(".mobile-toggle").click(function() {
       $(".overlay-device").remove();
-    })  
+    })
+    $("#imgUpload").change(function() {
+      if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+          $('#imagePreview').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(this.files[0]); // convert to base64 string
+      }
+    });
+    $("#imagePreview").click(function() {
+      $("#imgUpload").trigger("click");
+    })
   }
 
   return {
@@ -85,6 +101,7 @@ var custom = function () {
       select2();
       select2_assigne();
       custom_mobile_device();
+      upload_image();
     }
   }
 }();
