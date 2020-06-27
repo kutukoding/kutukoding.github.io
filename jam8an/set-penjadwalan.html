@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Schedule</title>
+  <title>Set Penjadwalan</title>
 
   <style>
     #loader {
@@ -77,6 +77,9 @@
 
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css" integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g==" crossorigin="">
+
+  <!-- Air Datepicker CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link href="assets/style/custom.css" rel="stylesheet">
@@ -174,13 +177,24 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item actived">
-            <a class='sidebar-link' href="schedule.html">
+          <li class="nav-item dropdown open">
+            <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
               </span>
-              <span class="title">Schedule</span>
+              <span class="title">Penjadwalan</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
             </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
+              </li>
+              <li class="actived">
+                <a class='sidebar-link' href="set-penjadwalan.html">Atur Penjadwalan</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
@@ -269,6 +283,11 @@
             <li>
               <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
                 <i class="ti-menu"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="logo-partner-text">Nikon Next</span>
               </a>
             </li>
             <!-- <li class="search-box">
@@ -420,7 +439,7 @@
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                   <form>
                     <div class="form-group row">
-                      <label for="nameInput" class="col-sm-2 col-form-label">Select Location</label>
+                      <label for="nameInput" class="col-sm-2 col-form-label">Pilih Lokasi</label>
                       <div class="col-sm-10">
                         <div id="map"></div>
                       </div>
@@ -432,149 +451,65 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="addressInput" class="col-sm-2 col-form-label">Address Line</label>
+                      <label for="addressInput" class="col-sm-2 col-form-label">Alamat Lengkap</label>
                       <div class="col-sm-10">
                         <input type="text" class="form-control" id="addressInput" disabled>
                       </div>
                     </div>
                     <div class="form-group row">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="cityInput" class="col-sm-4 col-form-label">City</label>
-                          <div class="col-sm-8">
-                            <div class="select2--custom">
-                              <select id="cityInput" class="form-control js-select2" placeholder="Select City" style="width: 100%;" disabled>
-                                <option value="Solved">Malang</option>
-                                <option value="Solved">Surabaya</option>
-                                <option value="Bandung">Bandung</option>
-                                <option value="Jakarta">Jakarta</option>
-                              </select>
-                            </div>
+                      <label for="assigneInput" class="col-sm-2 col-form-label">Penjadwalan</label>
+                      <div class="col-sm-10">
+                        <div class="row mb-3 js-penjadwalan" data-urutan="1">
+                          <div class="col-md-2">
+                            <label class="col-form-label">Tanggal</label>
+                          </div>
+                          <div class="col-md-7">
+                            <input type="text" class="form-control js-datepicker">
+                          </div>
+                          <div class="col-md-3">
+                            <button type="button" class="btn btn-success w-100 js-tambah-tanggal">Tambah Tanggal</button>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="floorInput" class="col-sm-4 col-form-label">Floor Number</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="floorInput" disabled>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="longitude" class="col-sm-4 col-form-label">Longitude</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="longitude" disabled>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="latitude" class="col-sm-4 col-form-label">Latitude</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="latitude" disabled>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="assigneInput" class="col-sm-2 col-form-label">Schedule</label>
-                      <div class="col-sm-10  select2--custom">
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <span>Day</span>
-                          </div>
-                          <div class="col-md-6">
-                            <span>Name Cleaner</span>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="monday" value="Monday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerMonday" name="nameCleanerMonday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="tuesday" value="Tuesday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerTuesday" name="nameCleanerTuesday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="wednesday" value="Wednesday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerWednesday" name="nameCleanerWednesday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="thursday" value="Thursday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerThursday" name="nameCleanerThursday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="friday" value="Friday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerFriday" name="nameCleanerFriday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="saturday" value="Saturday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerSaturday" name="nameCleanerSaturday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="sunday" value="Sunday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerSunday" name="nameCleanerSunday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
+                        <table class="table table-striped table--jadwal">
+                          <thead>
+                            <tr>
+                              <th scope="col" width="15%">Keterangan</th>
+                              <th scope="col" width="85%">Nama Cleaner</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">Shift 1</th>
+                              <td>
+                                <select id="Date-1-ShiftOneMember" name="Date-1-ShiftOneMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Shift 2</th>
+                              <td>
+                                <select id="Date-1-ShiftTwoMember" name="Date-1-ShiftTwoMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Shift 3</th>
+                              <td>
+                                <select id="Date-1-ShiftThreeMember" name="Date-1-ShiftThreeMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
 
@@ -635,6 +570,9 @@
   <!-- Load Plugin Esri Leaflet Geocoder map from CDN -->
   <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js" integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA==" crossorigin=""></script>
 
+  <!-- Air Datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
 
   <!-- Custom Js -->
   <script src="assets/js/custom.js"></script>
@@ -644,9 +582,6 @@
       var geocodeService = L.esri.Geocoding.geocodeService();
       var nameToilet = this.getPopup()._content
       geocodeService.reverse().latlng(this.getLatLng()).run(function (error, result) {
-        console.log(result)
-        document.getElementById('latitude').value = result.latlng.lat;
-        document.getElementById('longitude').value = result.latlng.lng;
         document.getElementById('addressInput').value = result.address.Match_addr;
         document.getElementById('nameInput').value = nameToilet;
       })
@@ -677,7 +612,13 @@
           $(".js-others-input").slideUp();
         }
       })
-
+      $('.js-datepicker').datepicker({
+        autoClose: true,
+        language: "en"
+      });
+      $(".js-tambah-tanggal").click(function() {
+        console.log($(this).closest(".js-penjadwalan").data("urutan"))
+      })
     })
   </script>
 

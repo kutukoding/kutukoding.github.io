@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Form Subscription</title>
+  <title>Riwayat Penjadwalan </title>
 
   <style>
     #loader {
@@ -149,7 +149,7 @@
               <span class="title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item dropdown open">
+          <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-harddrives"></i>
@@ -169,12 +169,12 @@
               <li>
                 <a class='sidebar-link' href="user.html">User</a>
               </li>
-              <li class="actived">
+              <li>
                 <a class='sidebar-link' href="subscription.html">Subscription Plan</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown open">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
@@ -185,7 +185,7 @@
               </span>
             </a>
             <ul class="dropdown-menu">
-              <li>
+              <li class="actived">
                 <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
               </li>
               <li>
@@ -412,55 +412,251 @@
           <div class="container-fluid">
             <div class="main-content__header d-flex justify-content-between mT-10 mB-30">
               <div class="left-header d-flex align-items-center">
-                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Form Subscription Plan</h4>
+                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Riwayat Penjadwalan</h4>
                 <nav aria-label="breadcrumb ml-3">
                   <ol class="breadcrumb breadcrumb--transparent mb-0 p-0">
                     <li class="breadcrumb-item"><a href="dashboard.html"><i class="ti-home"></i></a></li>
-                    <li class="breadcrumb-item">Master Data</li>
-                    <li class="breadcrumb-item"><a href="subscription.html">Subscription Plan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Form Subscription Plan</li>
+                    <li class="breadcrumb-item">Penjadwalan</li>
+                    <li class="breadcrumb-item active" aria-current="page">Riwayat Penjadwalan</li>
                   </ol>
-                </nav>
               </div>
+              <a href="form-toilet.html" class="btn btn-primary">Atur Penjadwalan</a>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                  <form>
-                    <div class="form-group row">
-                      <label for="nameInput" class="col-sm-2 col-form-label">Nama Plan</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nameInput">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="descInput" class="col-sm-2 col-form-label">Deskripsi</label>
-                      <div class="col-sm-10">
-                        <textarea id="descInput" class="form-control" rows="3"></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="priceInput" class="col-sm-2 col-form-label">Harga</label>
-                      <div class="col-sm-10">
-                        <input type="number" class="form-control" id="priceInput">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="statusInput" class="col-sm-2 col-form-label">Status</label>
-                      <div class="col-sm-10 d-flex align-items-center">
-                        <label class="switch mb-0">
-                          <input type="checkbox" checked>
-                          <span class="slider round"></span>
-                        </label>
-                        <span class="text-success ml-3">Active</span>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-                    </div>
-                  </form>
+                  <table class="table table-striped js-datatable nowrap" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Nama Toilet</th>
+                        <th>Tanggal</th>
+                        <th>Shift 1</th>
+                        <th>Shift 2</th>
+                        <th>Shift 3</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="align-middle">Mall MX</td>
+                        <td class="align-middle">23 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/23.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 3 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Block M Lt.1</td>
+                        <td class="align-middle">22 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/33.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 1 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Block M Lt.2</td>
+                        <td class="align-middle">22 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/33.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 1 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Block M Lt.3</td>
+                        <td class="align-middle">22 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/5.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/9.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/10.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/33.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__more">
+                                <span>+ 1 more</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <span class="badge badge-success">Active</span>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -505,6 +701,20 @@
 
   <!-- Custom Js -->
   <script src="assets/js/custom.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.deleteRecord').click(function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!"
+        })
+      })
+    })
+  </script>
 
 </body>
 

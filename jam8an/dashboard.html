@@ -174,13 +174,24 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class='sidebar-link' href="schedule.html">
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
               </span>
-              <span class="title">Schedule</span>
+              <span class="title">Penjadwalan</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
             </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="set-penjadwalan.html">Atur Penjadwalan</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
@@ -391,6 +402,138 @@
       <main class='main-content bgc-grey-100 pt-20'>
         <div id='mainContent'>
           <div class="row gap-20 masonry pos-r">
+            <div class="masonry-item  w-100">
+              <div class="row gap-20">
+                <div class="col-md-4">
+                  <div class="layers bgc-white px-3 py-4 pos-r mb-4">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Percentage Upgrader</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-bar-chart"></i>
+                      </div>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <h3 class="fw-600 mb-0 color-brand">75 %</h3>
+                          <small class="mb-0 text-success">
+                            <i class="ti-arrow-up"></i>
+                            15% increased
+                          </small>
+                          <small class="mb-0">
+                            from last six month
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layers bgc-white px-3 py-4 pos-r mb-4">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Total Upgrader</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-face-smile"></i>
+                      </div>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <h3 class="fw-600 mb-0 color-brand">30 Upgraders</h3>
+                          <small class="mb-0 text-success">
+                            <i class="ti-arrow-up"></i>
+                            15% increased
+                          </small>
+                          <small class="mb-0">
+                            from last six month
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layers bgc-white px-3 py-4 pos-r">
+                    <div class="layer w-100 mb-0">
+                      <span class="lh-1 mb-0">Total Users</span>
+                      <div class="layers-ribbon">
+                        <i class="ti-user"></i>
+                      </div>
+                    </div>
+                    <div class="layer w-100">
+                      <div class="peers ai-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <h3 class="fw-600 mb-0 color-brand">40 Users</h3>
+                          <small class="mb-0 text-danger">
+                            <i class="ti-arrow-up"></i>
+                            15% increased
+                          </small>
+                          <small class="mb-0">
+                            from last six month
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-md-8'>
+                  <div class="bgc-white p-30 pos-r layers--grafic">
+                    <div class="title">
+                      <h6 class="lh-1">User and Upgrader Traffic</h6>
+                    </div>
+                    <div class="content">
+                      <canvas id="jsChartUserUpgrader"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="masonry-item col-12">
+              <!-- #Site Visits ==================== -->
+              <div class="layers bgc-white">
+                <div class="peers w-100">
+                  <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
+                    <div>
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Toilets Allocation</h6>
+                      </div>
+                      <div class="layer w-100">
+                        <div id="map" style="height: 370px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="peer bdL w-30p@lg+ w-100p@lg-">
+                    <div>
+                      <div class="layer w-100">
+                        <!-- Progress Bars -->
+                        <div>
+                          <div class="layer w-100 px-4 pt-4">
+                            <h5 class="mB-5">1000 Toilets</h5>
+                            <small class="fw-500 c-grey-700">Total Registered Toilet</small>
+                          </div>
+                          <hr>
+                          <div class="layer w-100 px-4 pt-0 mT-15">
+                            <h5 class="mB-5">850 Cleaners</h5>
+                            <small class="fw-500 c-grey-700">Total Registered Cleaner</small>
+                          </div>
+                          <hr>
+                          <div class="layer w-100 px-4 pt-0 mT-15">
+                            <h5 class="mB-5">850 Toilets</h5>
+                            <small class="fw-500 c-grey-700">Total Assigned Toilet</small>
+                          </div>
+                          <hr>
+                          <div class="layer w-100 px-4 pt-0 mT-15">
+                            <h5 class="mB-5">10 City</h5>
+                            <small class="fw-500 c-grey-700">Total Registered City</small>
+                          </div>
+                          <hr>
+                          <div class="layer w-100 px-4 pt-0 pb-4 mT-15">
+                            <h5 class="mB-5">2 Island</h5>
+                            <small class="fw-500 c-grey-700">Total Registered Island</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="masonry-item col-12">
               <div class="masonry-item  w-100 mB-10">
                 <div class="row gap-20">
@@ -476,138 +619,6 @@
                 </div>
               </div>
             </div>
-            <div class="masonry-item col-12">
-              <!-- #Site Visits ==================== -->
-              <div class="layers bgc-white">
-                <div class="peers w-100">
-                  <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
-                    <div>
-                      <div class="layer w-100 mB-10">
-                        <h6 class="lh-1">Toilets Allocation</h6>
-                      </div>
-                      <div class="layer w-100">
-                        <div id="map" style="height: 370px;"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="peer bdL w-30p@lg+ w-100p@lg-">
-                    <div>
-                      <div class="layer w-100">
-                        <!-- Progress Bars -->
-                        <div>
-                          <div class="layer w-100 px-4 pt-4">
-                            <h5 class="mB-5">1000 Toilets</h5>
-                            <small class="fw-500 c-grey-700">Total Registered Toilet</small>
-                          </div>
-                          <hr>
-                          <div class="layer w-100 px-4 pt-0 mT-15">
-                            <h5 class="mB-5">850 Cleaners</h5>
-                            <small class="fw-500 c-grey-700">Total Registered Cleaner</small>
-                          </div>
-                          <hr>
-                          <div class="layer w-100 px-4 pt-0 mT-15">
-                            <h5 class="mB-5">850 Toilets</h5>
-                            <small class="fw-500 c-grey-700">Total Assigned Toilet</small>
-                          </div>
-                          <hr>
-                          <div class="layer w-100 px-4 pt-0 mT-15">
-                            <h5 class="mB-5">10 City</h5>
-                            <small class="fw-500 c-grey-700">Total Registered City</small>
-                          </div>
-                          <hr>
-                          <div class="layer w-100 px-4 pt-0 pb-4 mT-15">
-                            <h5 class="mB-5">2 Island</h5>
-                            <small class="fw-500 c-grey-700">Total Registered Island</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="masonry-item  w-100">
-              <div class="row gap-20">
-                <div class="col-md-4">
-                  <div class="layers bgc-white px-3 py-4 pos-r mb-4">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Percentage Upgrader</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-bar-chart"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">75 %</h3>
-                          <small class="mb-0 text-success">
-                            <i class="ti-arrow-up"></i>
-                            15% increased
-                          </small>
-                          <small class="mb-0">
-                            from last six month
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="layers bgc-white px-3 py-4 pos-r mb-4">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Total Upgrader</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-face-smile"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">30 Upgraders</h3>
-                          <small class="mb-0 text-success">
-                            <i class="ti-arrow-up"></i>
-                            15% increased
-                          </small>
-                          <small class="mb-0">
-                            from last six month
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="layers bgc-white px-3 py-4 pos-r">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Total Users</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-user"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">40 Users</h3>
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            15% increased
-                          </small>
-                          <small class="mb-0">
-                            from last six month
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-md-8'>
-                  <div class="bgc-white p-30 pos-r layers--grafic">
-                    <div class="title">
-                      <h6 class="lh-1">User and Upgrader Traffic</h6>
-                    </div>
-                    <div class="content">
-                      <canvas id="jsChartUserUpgrader"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </main>
@@ -672,32 +683,60 @@
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
           datasets: [{
-            label: 'User',
+            label: 'New User',
             backgroundColor: 'rgb(54, 162, 235)',
             borderColor: 'rgb(54, 162, 235)',
             data: [
-              10,
-              12,
-              15,
-              22,
-              27,
-              30,
-              40
+              2,
+              5,
+              3,
+              5,
+              8,
+              3,
+              9
             ],
             fill: false,
           }, {
-            label: 'Upgrader',
+            label: 'Problem',
             fill: false,
-            backgroundColor: 'rgb(76, 175, 80)',
-            borderColor: 'rgb(76, 175, 80)',
+            backgroundColor: 'rgb(178, 90, 83)',
+            borderColor: 'rgb(178, 90, 83)',
             data: [
+              0,
+              2,
+              0,
+              3,
+              0,
+              0,
+              5
+            ],
+          }, {
+            label: 'Complain',
+            fill: false,
+            backgroundColor: 'rgb(244, 67, 54)',
+            borderColor: 'rgb(244, 67, 54)',
+            data: [
+              0,
+              0,
+              3,
+              0,
+              3,
+              2,
+              0
+            ],
+          }, {
+            label: 'Rating',
+            fill: false,
+            backgroundColor: 'rgb(244, 165, 64)',
+            borderColor: 'rgb(244, 165, 64)',
+            data: [
+              5,
+              5,
+              7,
+              4,
+              3,
               8,
-              10,
-              12,
-              15,
-              27,
-              28,
-              30
+              2
             ],
           }]
         },
