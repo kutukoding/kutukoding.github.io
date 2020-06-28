@@ -464,7 +464,7 @@
                             <label class="col-form-label">Tanggal</label>
                           </div>
                           <div class="col-md-7">
-                            <input type="text" class="form-control js-datepicker">
+                            <input type="text" class="form-control js-datepicker" data-date-format="dd-mm-yyyy">
                           </div>
                           <div class="col-md-3">
                             <button type="button" class="btn btn-success w-100 js-tambah-tanggal">Tambah Tanggal</button>
@@ -473,13 +473,15 @@
                         <table class="table table-striped table--jadwal">
                           <thead>
                             <tr>
+                              <th scope="col" width="15%">Tanggal</th>
                               <th scope="col" width="15%">Keterangan</th>
-                              <th scope="col" width="85%">Nama Cleaner</th>
+                              <th scope="col" width="70%">Nama Cleaner</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <th scope="row">Shift 1</th>
+                              <th scope="row">28-06-2020</th>
+                              <th>Shift 1</th>
                               <td>
                                 <select id="Date-1-ShiftOneMember" name="Date-1-ShiftOneMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
                                   <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
@@ -489,7 +491,8 @@
                               </td>
                             </tr>
                             <tr>
-                              <th scope="row">Shift 2</th>
+                              <th></th>
+                              <th>Shift 2</th>
                               <td>
                                 <select id="Date-1-ShiftTwoMember" name="Date-1-ShiftTwoMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
                                   <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
@@ -499,7 +502,8 @@
                               </td>
                             </tr>
                             <tr>
-                              <th scope="row">Shift 3</th>
+                              <th></th>
+                              <th>Shift 3</th>
                               <td>
                                 <select id="Date-1-ShiftThreeMember" name="Date-1-ShiftThreeMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
                                   <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
@@ -617,7 +621,75 @@
         language: "en"
       });
       $(".js-tambah-tanggal").click(function() {
-        console.log($(this).closest(".js-penjadwalan").data("urutan"))
+        $(this).closest(".js-penjadwalan").data("urutan", $(this).closest(".js-penjadwalan").data("urutan") + 1);
+        const rowNumber = $(this).closest(".js-penjadwalan").data("urutan");
+        let domRow = `
+        <tr>
+          <th scope="row">${$(".js-datepicker").val()}</th>
+          <th>Shift 1</th>
+          <td>
+            <select id="Date-${rowNumber}-ShiftOneMember" name="Date-${rowNumber}-ShiftOneMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Shift 2</th>
+          <td>
+            <select id="Date-${rowNumber}-ShiftTwoMember" name="Date-${rowNumber}-ShiftTwoMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Shift 3</th>
+          <td>
+            <select id="Date-${rowNumber}-ShiftThreeMember" name="Date-${rowNumber}-ShiftThreeMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+            </select>
+          </td>
+        </tr>`;
+        $(".table--jadwal tbody:last-child").append(domRow)
+        $('.table--jadwal .js-select2--asigne').select2({
+        templateSelection: function (data) {
+          var r = data.text.split('|');
+          var $result = $(
+            `
+          <div class="avatar-select2-selected">
+            <div class="avatar-select2-selected__image">
+              <img src="${r[0]}" alt="${r[1]}">
+            </div>
+            <span class="avatar-select2-selected__name">${r[1]}</span>
+          </div>
+          `
+          );
+          return $result;
+        },
+        templateResult: function (data) {
+          var r = data.text.split('|');
+          var $result = $(
+            `
+          <div class="row">
+            <div class="col-md-1">
+              <div class="avatar-select2">
+                <img class="w-2r bdrs-50p" src="${r[0]}" alt="${r[1]}">
+              </div>
+            </div>
+            <div class="col-md-11 d-flex align-items-center"> ${r[1]} </div>
+          </div>
+          `
+          );
+          return $result;
+        }
+      });
       })
     })
   </script>
