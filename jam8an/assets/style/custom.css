@@ -317,6 +317,15 @@
     left: 0;
 }
 
+.table--jadwal li {
+    padding: 15px;
+    border-top: 1px solid #ced4da;
+}
+
+.table--jadwal li:nth-child(even) {
+    background-color: #fbfbfe;
+}
+
 .signin-logo {
     width: 215px;
 }
@@ -332,6 +341,11 @@
 
 .bdr-top {
     border-top: 1px solid #dcdde7;
+}
+
+.table--jadwal {
+    list-style: none;
+    padding: 0;
 }
 
 /* popup response */
