@@ -693,6 +693,7 @@
 
 .header {
     z-index: 1040 !important;
+    max-height: 66px;
 }
 
 input[type="file"] {

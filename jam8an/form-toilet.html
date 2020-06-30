@@ -170,7 +170,7 @@
                 <a class='sidebar-link' href="cleaner.html">Cleaner</a>
               </li>
               <li>
-                <a class='sidebar-link' href="user.html">User</a>
+                <a class='sidebar-link' href="user.html">Pengguna</a>
               </li>
               <li>
                 <a class='sidebar-link' href="subscription.html">Subscription Plan</a>
@@ -214,7 +214,7 @@
                 <a class='sidebar-link' href="problem.html">Problem</a>
               </li>
               <li>
-                <a class='sidebar-link' href="complain.html">Complain</a>
+                <a class='sidebar-link' href="complain.html">Komplain</a>
               </li>
               <li>
                 <a class='sidebar-link' href="rating.html">Rating</a>
@@ -236,7 +236,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class='sidebar-link' href="profile.html">My Profile</a>
+                <a class='sidebar-link' href="profile.html">Profile</a>
               </li>
               <li>
                 <a class='sidebar-link' href="upgrade.html">Upgrade Plan</a>
@@ -248,7 +248,7 @@
               <span class="icon-holder">
                 <i class="ti-power-off"></i>
               </span>
-              <span class="title">Logout</span>
+              <span class="title">Keluar</span>
             </a>
           </li>
           <!-- <li class="nav-item dropdown">
@@ -310,7 +310,7 @@
               <ul class="dropdown-menu">
                 <li class="pX-20 pY-15 bdB">
                   <i class="ti-bell pR-10"></i>
-                  <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                  <span class="fsz-sm fw-600 c-grey-900">Notifikasi</span>
                 </li>
                 <li>
                   <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
@@ -369,7 +369,7 @@
                 </li>
                 <li class="pX-20 pY-15 ta-c bdT">
                   <span>
-                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">Lihat Semua Notifikasi <i class="ti-angle-right fsz-xs mL-10"></i></a>
                   </span>
                 </li>
               </ul>
@@ -400,7 +400,7 @@
                 <li>
                   <a href="index.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-power-off mR-10"></i>
-                    <span>Logout</span>
+                    <span>Keluar</span>
                   </a>
                 </li>
               </ul>
@@ -795,7 +795,7 @@
                             </div>
                           </div>
                         </div>
-                        <button class="btn btn-primary pull-right" type="submit">Submit</button>
+                        <button class="btn btn-primary pull-right" type="submit">Simpan</button>
                       </div>
                     </div>
                   </form>
@@ -1063,13 +1063,18 @@
         e.preventDefault();
         Swal.fire({
           title: "Jadwal toilet belum di set",
-          text: "Apakah anda ingin mengAtur Penjadwalan sekarang?",
+          text: "Apakah anda ingin mengatur Penjadwalan sekarang?",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonText: "Ya",
           cancelButtonText: "Tidak"
-        }).then(() => {
-          window.location = `${window.location.hostname}/jam8an/set-penjadwalan.html`;
+        }).then((result) => {
+          console.log(result.isConfirmed)
+          if (result.isConfirmed) {
+            window.location = `set-penjadwalan.html`;
+          } else {
+            window.location = `toilet.html`;
+          }
         })
       })
     })
