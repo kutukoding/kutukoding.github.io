@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Toilet</title>
+  <title>Set Penjadwalan</title>
 
   <style>
     #loader {
@@ -78,6 +78,9 @@
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css" integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g==" crossorigin="">
 
+  <!-- Air Datepicker CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet">
+
   <!-- Custom CSS -->
   <link href="assets/style/custom.css" rel="stylesheet">
 </head>
@@ -149,7 +152,7 @@
               <span class="title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item dropdown open">
+          <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-harddrives"></i>
@@ -160,7 +163,7 @@
               </span>
             </a>
             <ul class="dropdown-menu">
-              <li class="actived">
+              <li>
                 <a class='sidebar-link' href="toilet.html">Toilet</a>
               </li>
               <li>
@@ -174,7 +177,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown open">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
@@ -188,7 +191,7 @@
               <li>
                 <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
               </li>
-              <li>
+              <li class="actived">
                 <a class='sidebar-link' href="set-penjadwalan.html">Atur Penjadwalan</a>
               </li>
             </ul>
@@ -412,220 +415,142 @@
           <div class="container-fluid">
             <div class="main-content__header d-flex justify-content-between mT-10 mB-30">
               <div class="left-header d-flex align-items-center">
-                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Toilet</h4>
+                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Set Penjadwalan</h4>
                 <nav aria-label="breadcrumb ml-3">
                   <ol class="breadcrumb breadcrumb--transparent mb-0 p-0">
                     <li class="breadcrumb-item"><a href="dashboard.html"><i class="ti-home"></i></a></li>
-                    <li class="breadcrumb-item">Master Data</li>
-                    <li class="breadcrumb-item active" aria-current="page">Toilet</li>
+                    <li class="breadcrumb-item">Penjadwalan</li>
+                    <li class="breadcrumb-item active" aria-current="page">Set Penjadwalan</li>
                   </ol>
                 </nav>
               </div>
-              <a href="form-toilet.html" class="btn btn-primary">Tambah Toilet</a>
+              <!-- <div class="select2--custom">
+                <select id="toiletLocation" class="form-control js-select2" placeholder="Select City" style="width: 100%;">
+                  <option value="Toilet Block M">Toilet Block M</option>
+                  <option value="Toilet Block S">Toilet Block S</option>
+                  <option value="Toilet Mall MX Floor 1">Toilet Mall MX Floor 1</option>
+                  <option value="Toilet Mall MX Floor 3">Toilet Mall MX Floor 3</option>
+                  <option value="Toilet Mall Trans Studio Floor 1">Toilet Mall Trans Studio Floor 1</option>
+                  <option value="Toilet Mall Trans Studio Floor 3">Toilet Mall Trans Studio Floor 3</option>
+                </select>
+              </div> -->
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                  <table class="table table-striped js-datatable nowrap" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th>Nama Toilet</th>
-                        <th>Kota</th>
-                        <th>Nomor Lantai</th>
-                        <th>Petugas</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="align-middle">Mall MX</td>
-                        <td class="align-middle">Malang</td>
-                        <td class="align-middle">1</td>
-                        <td class="align-middle">
-                          <ul class="assigne">
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                  <form>
+                    <div class="form-group row">
+                      <label for="nameInput" class="col-sm-2 col-form-label">Pilih Lokasi</label>
+                      <div class="col-sm-10">
+                        <div id="map"></div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="nameInput" class="col-sm-2 col-form-label">Name Toilet</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nameInput" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="addressInput" class="col-sm-2 col-form-label">Alamat Lengkap</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="addressInput" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="assigneInput" class="col-sm-2 col-form-label">Penjadwalan</label>
+                      <div class="col-sm-10">
+                        <div class="mb-3 js-penjadwalan" data-urutan="1">
+                          <button type="button" class="col-sm-3 btn btn-success w-100 js-tambah-tanggal">
+                            <i class="ti-plus mr-1"></i>
+                             Tambah Tanggal
+                          </button>
+                        </div>
+                        <ul class="table--jadwal">
+                          <li>
+                            <div class="form-group" style="max-width: 120px;">
+                              <input type="text" class="form-control js-datepicker" data-date-format="dd-mm-yyyy">
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-1 col-form-label">Shift 1</label>
+                              <div class="col-sm-11">
+                                <select id="date-1-shift-1" name="date-1-shift-1" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
                               </div>
-                            </li>
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-1 col-form-label">Shift 2</label>
+                              <div class="col-sm-11">
+                                <select id="date-1-shift-2" name="date-1-shift-2" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
                               </div>
-                            </li>
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/23.jpg">
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-1 col-form-label">Shift 3</label>
+                              <div class="col-sm-11">
+                                <select id="date-1-shift-3" name="date-1-shift-3" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
                               </div>
-                            </li>
-                            <li>
-                              <div class="assigne__more">
-                                <span>+ 3 more</span>
-                              </div>
-                            </li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="form-cleaner.html">Rubah</a>
-                          <a href="#" class="deleteRecord">Hapus</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Mall MX</td>
-                        <td class="align-middle">Malang</td>
-                        <td class="align-middle">2</td>
-                        <td class="align-middle">
-                          <ul class="assigne">
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__initial">
-                                <span>MA</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__more">
-                                <span>+ 3 more</span>
-                              </div>
-                            </li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="form-cleaner.html">Rubah</a>
-                          <a href="#" class="deleteRecord">Hapus</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Block M</td>
-                        <td class="align-middle">Jakarta</td>
-                        <td class="align-middle">1</td>
-                        <td class="align-middle">
-                          <ul class="assigne">
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
-                              </div>
-                            </li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="form-cleaner.html">Rubah</a>
-                          <a href="#" class="deleteRecord">Hapus</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Mall MX</td>
-                        <td class="align-middle">Malang</td>
-                        <td class="align-middle">1</td>
-                        <td class="align-middle">
-                          <ul class="assigne">
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/23.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__more">
-                                <span>+ 3 more</span>
-                              </div>
-                            </li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="form-cleaner.html">Rubah</a>
-                          <a href="#" class="deleteRecord">Hapus</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Mall MX</td>
-                        <td class="align-middle">Malang</td>
-                        <td class="align-middle">2</td>
-                        <td class="align-middle">
-                          <ul class="assigne">
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/2.jpg">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__initial">
-                                <span>MA</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="assigne__more">
-                                <span>+ 3 more</span>
-                              </div>
-                            </li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="form-cleaner.html">Rubah</a>
-                          <a href="#" class="deleteRecord">Hapus</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Block M</td>
-                        <td class="align-middle">Jakarta</td>
-                        <td class="align-middle">1</td>
-                        <td class="align-middle">
-                          <ul class="assigne">
-                            <li>
-                              <div class="assigne__avatar">
-                                <img src="https://randomuser.me/api/portraits/men/11.jpg">
-                              </div>
-                            </li>
-                          </ul>
-                        </td>
-                        <td class="align-middle">
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="form-cleaner.html">Rubah</a>
-                          <a href="#" class="deleteRecord">Hapus</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                            </div>
+                          </li>
+                        </ul>
+                        <!-- <table class="table table-striped table--jadwal">
+                          <thead>
+                            <tr>
+                              <th scope="col" width="15%">Tanggal</th>
+                              <th scope="col" width="15%">Keterangan</th>
+                              <th scope="col" width="70%">Nama Cleaner</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">28-06-2020</th>
+                              <th>Shift 1</th>
+                              <td>
+                                
+                              </td>
+                            </tr>
+                            <tr>
+                              <th></th>
+                              <th>Shift 2</th>
+                              <td>
+                                <select id="Date-1-ShiftTwoMember" name="Date-1-ShiftTwoMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th></th>
+                              <th>Shift 3</th>
+                              <td>
+                                <select id="Date-1-ShiftThreeMember" name="Date-1-ShiftThreeMember" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                                  <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                                  <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                                  <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table> -->
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -667,20 +592,128 @@
   <!-- Load Plugin Esri Leaflet Geocoder map from CDN -->
   <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js" integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA==" crossorigin=""></script>
 
+  <!-- Air Datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
 
   <!-- Custom Js -->
   <script src="assets/js/custom.js"></script>
 
   <script>
+    function markerOnClick() {
+      var geocodeService = L.esri.Geocoding.geocodeService();
+      var nameToilet = this.getPopup()._content
+      geocodeService.reverse().latlng(this.getLatLng()).run(function (error, result) {
+        document.getElementById('addressInput').value = result.address.Match_addr;
+        document.getElementById('nameInput').value = nameToilet;
+      })
+    }
     $(document).ready(function () {
-      $('.deleteRecord').click(function () {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: "Yes, delete it!"
-        })
+
+      // Map
+      var map = L.map('map').setView([-6.218205, 106.845002], 11);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+
+      L.marker([-6.218205, 106.845002]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Mangarai.')
+      L.marker([-6.216211, 106.844208]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Tebet.')
+      L.marker([-6.215507, 106.845978]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet SIN Herbal.')
+      L.marker([-6.181782, 106.894435]).on('click', markerOnClick).addTo(map).bindPopup('Mall Pulo Gadung.')
+      L.marker([-6.210907, 106.900198]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Jatinegara Kaum.')
+      L.marker([-6.160774, 106.762844]).on('click', markerOnClick).addTo(map).bindPopup('Mall Kedoya.')
+      L.marker([-6.246714, 106.710016]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Paninggilan.')
+
+      // JS for hide and show other fasilities input
+      $(".js-others-fasilities").change(function () {
+        if ($(".js-others-fasilities:checked").length) {
+          $(".js-others-input").slideDown();
+        } else {
+          $(".js-others-input").slideUp();
+        }
+      })
+      $('.js-datepicker').datepicker({
+        autoClose: true,
+        language: "en"
+      }).data('datepicker').selectDate(new Date());
+      $(".js-tambah-tanggal").click(function() {
+        $(this).closest(".js-penjadwalan").data("urutan", $(this).closest(".js-penjadwalan").data("urutan") + 1);
+        const rowNumber = $(this).closest(".js-penjadwalan").data("urutan");
+        let domRow = `
+        <li>
+          <div class="form-group" style="max-width: 120px;">
+            <input type="text" class="form-control js-datepicker" data-date-format="dd-mm-yyyy">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">Shift 1</label>
+            <div class="col-sm-11">
+              <select id="date-${rowNumber}-shift-1" name="date-${rowNumber}-shift-1" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">Shift 2</label>
+            <div class="col-sm-11">
+              <select id="date-${rowNumber}-shift-2" name="date-${rowNumber}-shift-2" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">Shift 3</label>
+            <div class="col-sm-11">
+              <select id="date-${rowNumber}-shift-3" name="date-${rowNumber}-shift-3" class="form-control js-select2--asigne" multiple style="width: 100%;">
+                <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
+                <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
+                <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
+              </select>
+            </div>
+          </div>
+        </li>`;
+        $(".table--jadwal").append(domRow)
+        $('.table--jadwal .js-select2--asigne').select2({
+        templateSelection: function (data) {
+          var r = data.text.split('|');
+          var $result = $(
+            `
+          <div class="avatar-select2-selected">
+            <div class="avatar-select2-selected__image">
+              <img src="${r[0]}" alt="${r[1]}">
+            </div>
+            <span class="avatar-select2-selected__name">${r[1]}</span>
+          </div>
+          `
+          );
+          return $result;
+        },
+        templateResult: function (data) {
+          var r = data.text.split('|');
+          var $result = $(
+            `
+          <div class="row">
+            <div class="col-md-1">
+              <div class="avatar-select2">
+                <img class="w-2r bdrs-50p" src="${r[0]}" alt="${r[1]}">
+              </div>
+            </div>
+            <div class="col-md-11 d-flex align-items-center"> ${r[1]} </div>
+          </div>
+          `
+          );
+          return $result;
+        }
+      });
+        $('.js-datepicker').datepicker({
+          autoClose: true,
+          language: "en"
+        }).data('datepicker').selectDate(new Date());
       })
     })
   </script>

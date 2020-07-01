@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Problem</title>
+  <title>Riwayat Penjadwalan </title>
 
   <style>
     #loader {
@@ -68,6 +68,15 @@
   <!-- Datatable CSS -->
   <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css" rel="stylesheet">
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Load Leaflet Map Css from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+
+  <!-- Load Esri Leaflet Geocoder from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css" integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g==" crossorigin="">
 
   <!-- Air Datepicker CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet">
@@ -168,7 +177,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown open">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
@@ -179,7 +188,7 @@
               </span>
             </a>
             <ul class="dropdown-menu">
-              <li>
+              <li class="actived">
                 <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
               </li>
               <li>
@@ -187,7 +196,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown open">
+          <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-desktop"></i>
@@ -201,7 +210,7 @@
               <li>
                 <a class='sidebar-link' href="overview.html">Overview</a>
               </li>
-              <li class="actived">
+              <li>
                 <a class='sidebar-link' href="problem.html">Problem</a>
               </li>
               <li>
@@ -406,132 +415,20 @@
           <div class="container-fluid">
             <div class="main-content__header d-flex justify-content-between mT-10 mB-30">
               <div class="left-header d-flex align-items-center">
-                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Problem</h4>
+                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Riwayat Penjadwalan</h4>
                 <nav aria-label="breadcrumb ml-3">
                   <ol class="breadcrumb breadcrumb--transparent mb-0 p-0">
                     <li class="breadcrumb-item"><a href="dashboard.html"><i class="ti-home"></i></a></li>
-                    <li class="breadcrumb-item">Monitoring</li>
-                    <li class="breadcrumb-item active" aria-current="page">Problem</li>
+                    <li class="breadcrumb-item">Penjadwalan</li>
+                    <li class="breadcrumb-item active" aria-current="page">Riwayat Penjadwalan</li>
                   </ol>
-                </nav>
               </div>
+              <a href="set-penjadwalan.html" class="btn btn-primary">Atur Penjadwalan</a>
             </div>
-
-            <!-- Widgets Stats -->
-            <div class="masonry-item  w-100 mB-30">
-              <div class="row gap-20">
-                <!-- #Total Problem ==================== -->
-                <div class="col-md-6 col-lg-3">
-                  <div class="layers bgc-white px-3 py-4 pos-r h-100">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Total Problem</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-face-sad"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">85 Problem</h3>
-                          <small class="mb-0 text-danger">
-                            <i class="ti-arrow-up"></i>
-                            15% meningkat
-                          </small>
-                          <small class="mb-0">
-                            dari minggu lalu
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- #Total Unresponse Problem ==================== -->
-                <div class="col-md-6 col-lg-3">
-                  <div class="layers bgc-white px-3 py-4 pos-r h-100">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Total Belum Direspon</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-comments"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">35 Problem</h3>
-                          <small class="mb-0 text-success">
-                            <i class="ti-arrow-down"></i>
-                            15% menurun
-                          </small>
-                          <small class="mb-0">
-                            dari minggu lalu
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- #Top Category ==================== -->
-                <div class="col-md-6 col-lg-3">
-                  <div class="layers bgc-white px-3 py-4 pos-r h-100">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Masalah Teratas</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-crown"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">Tisu</h3>
-                          <small class="mb-0 text-danger">
-                            35 of 85
-                          </small>
-                          <small class="mb-0">
-                            problem
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- #Average Time ==================== -->
-                <div class="col-md-6 col-lg-3">
-                  <div class="layers bgc-white px-3 py-4 pos-r h-100">
-                    <div class="layer w-100 mb-0">
-                      <span class="lh-1 mb-0">Rata-Rata Waktu</span>
-                      <div class="layers-ribbon">
-                        <i class="ti-timer"></i>
-                      </div>
-                    </div>
-                    <div class="layer w-100">
-                      <div class="peers ai-sb fxw-nw">
-                        <div class="peer peer-greed">
-                          <h3 class="fw-600 mb-0 color-brand">3h 12j 40m</h3>
-                          <small class="mb-0 text-success">
-                            <i class="ti-arrow-up"></i>
-                            10% meningkat
-                          </small>
-                          <small class="mb-0">
-                            dari minggu lalu
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
             <div class="row">
               <div class="col-md-12">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                   <div class="tbl-search row">
-                    <div class="col">
-
-                    </div>
                     <div class="col-lg-3">
                       <div class="form-group row">
                         <label for="searchDate" class="col-sm-3 col-form-label">Tanggal</label>
@@ -540,198 +437,182 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                       <div class="form-group row">
-                        <label for="searchStatus" class="col-sm-3 col-form-label">Status</label>
+                        <label for="searchDate" class="col-sm-3 col-form-label">Toilet</label>
                         <div class="col-sm-9">
-                          <div class="select2--custom">
-                            <select id="statusInput" class="form-control js-select2" placeholder="Select Status" style="width: 100%;">
-                              <option value="All">Semua</option>
-                              <option value="Solved">Selesai</option>
-                              <option value="Unsolved">Belum Selesai</option>
-                              <option value="Unresponse">Belum Direspon</option>
-                            </select>
-                          </div>
+                          <input type="text" class="form-control">
                         </div>
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Kategori</label>
+                        <label for="searchDate" class="col-sm-3 col-form-label">Cleaner</label>
                         <div class="col-sm-9">
-                          <div class="select2--custom">
-                            <select id="assigneInput" class="form-control js-select2" placeholder="Select Category" style="width: 100%;">
-                              <option value="All">Semua</option>
-                              <option value="Tissue">Tisu</option>
-                              <option value="Cleanliness">Kebersian</option>
-                              <option value="Water">Air</option>
-                            </select>
-                          </div>
+                          <input type="text" class="form-control">
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="table-responsive">
-                    <table class="table table-striped js-datatable nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>Tanggal</th>
-                          <th>Nama Pengguna</th>
-                          <th>Category</th>
-                          <th>Waktu Penyelesaian</th>
-                          <th>Status</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="tbl-date">31-05-2020 10:00:00</td>
-                          <td>Boby</td>
-                          <td>Tisu</td>
-                          <td>2h 22j 35m</td>
-                          <td>
-                            <span class="badge badge-success">Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 09:00:00</td>
-                          <td>Ainur</td>
-                          <td>Cleanliness</td>
-                          <td>1h 03j 15m</td>
-                          <td>
-                            <span class="badge badge-success">Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 08:30:00</td>
-                          <td>Sony</td>
-                          <td>Tisu</td>
-                          <td>2h 22j 35m</td>
-                          <td>
-                            <span class="badge badge-danger">Belum Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 08:30:00</td>
-                          <td>Rizky</td>
-                          <td>Cleanliness</td>
-                          <td>1h 03j 15m</td>
-                          <td>
-                            <span class="badge badge-secondary">Belum Direspon</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="tbl-date">31-05-2020 10:00:00</td>
-                          <td>Boby</td>
-                          <td>Tisu</td>
-                          <td>2h 22j 35m</td>
-                          <td>
-                            <span class="badge badge-success">Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 09:00:00</td>
-                          <td>Ainur</td>
-                          <td>Cleanliness</td>
-                          <td>1h 03j 15m</td>
-                          <td>
-                            <span class="badge badge-success">Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 08:30:00</td>
-                          <td>Sony</td>
-                          <td>Tisu</td>
-                          <td>2h 22j 35m</td>
-                          <td>
-                            <span class="badge badge-danger">Belum Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 08:30:00</td>
-                          <td>Rizky</td>
-                          <td>Cleanliness</td>
-                          <td>1h 03j 15m</td>
-                          <td>
-                            <span class="badge badge-secondary">Belum Direspon</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="tbl-date">31-05-2020 10:00:00</td>
-                          <td>Boby</td>
-                          <td>Water</td>
-                          <td>5d 14h 25min</td>
-                          <td><p class="tbl-truncate">Toilet flush broken :angry:</p></td>
-                          <td>
-                            <span class="badge badge-success">Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 09:00:00</td>
-                          <td>Ainur</td>
-                          <td>Cleanliness</td>
-                          <td>1h 03j 15m</td>
-                          <td>
-                            <span class="badge badge-success">Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 08:30:00</td>
-                          <td>Sony</td>
-                          <td>Tisu</td>
-                          <td>2h 22j 35m</td>
-                          <td>
-                            <span class="badge badge-danger">Belum Selesai</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>31-05-2020 08:30:00</td>
-                          <td>Rizky</td>
-                          <td>Cleanliness</td>
-                          <td>1h 03j 15m</td>
-                          <td>
-                            <span class="badge badge-secondary">Belum Direspon</span>
-                          </td>
-                          <td>
-                            <a href="#" data-toggle="modal" data-target="#responseModal">Response</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <table class="table table-striped js-datatable nowrap" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Nama Toilet</th>
+                        <th>Tanggal</th>
+                        <th>Shift 1</th>
+                        <th>Shift 2</th>
+                        <th>Shift 3</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="align-middle">Mall MX</td>
+                        <td class="align-middle">23 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Block M Lt.1</td>
+                        <td class="align-middle">22 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/5.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Block M Lt.2</td>
+                        <td class="align-middle">22 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/8.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/9.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/10.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">Block M Lt.3</td>
+                        <td class="align-middle">22 Juni 2020 </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/5.jpg">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/9.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <ul class="assigne">
+                            <li>
+                              <div class="assigne__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="align-middle">
+                          <a href="form-cleaner.html">Edit</a>
+                          <a href="#" class="deleteRecord">Delete</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -745,111 +626,6 @@
       </footer>
     </div>
   </div>
-  <div id="responseModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Response Problem</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body pt-0 row">
-          <div class="col-md-6">
-            <div class="message">
-              <div class="message-picture">
-                <span class="l-0 rrds">Sebelum</span>
-                <img src="assets/img/before.png" alt="Toilet Sebelum">
-              </div>
-              <div class="message-head row mb-0">
-                <div class="col-md-6">
-                  <p>
-                    <b>Nama User:</b><br />
-                    <span>
-                      Jono
-                    </span>
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p class="text-right">
-                    <b>Tanggal</b><br />
-                    <span>
-                      30-05-2020 09:00:00
-                    </span>
-                  </p>
-                </div>
-                <div class="col-md-12">
-                  <p class="mt-2">
-                    "Toiletnya tersumbat dan airnya kotor sekali dan berlumut"
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="message">
-              <div class="message-picture">
-                <span class="r-0 lrds">Sesudah</span>
-                <img src="assets/img/after.png" alt="Toilet Sebelum">
-              </div>
-              <div class="message-head row">
-                <div class="col-md-6">
-                  <p>
-                    <b>Nama Cleaner:</b><br />
-                    <span>
-                      Johnson
-                    </span>
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p class="text-right">
-                    <b>Tanggal</b><br />
-                    <span>
-                      30-05-2020 09:00:00
-                    </span>
-                  </p>
-                </div>
-                <div class="col-md-12">
-                  <p class="mt-2">
-                    "Cleaner seems lazy to cleaning the floor. 
-                    There are a lot of foot mark in several areas. 
-                    Some areas stillnt dry"
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 bdr-top">
-            <div class="message-content">
-              <form>
-                <div class="form-group row pt-4">
-                  <label for="responseInput" class="col-sm-2 col-form-label">Response</label>
-                  <div class="col-sm-10">
-                    <textarea id=responseInput class="form-control" name="response" cols="30" rows="3"></textarea>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="statusInput" class="col-sm-2 col-form-label">Status</label>
-                  <div class="col-sm-10 d-flex align-items-center">
-                    <label class="switch mb-0">
-                      <input type="checkbox">
-                      <span class="slider round"></span>
-                    </label>
-                    <span class="text-success ml-3">Solved</span>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Send Response</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script type="text/javascript" src="assets/static/bundle/js/vendor.js"></script>
   <script type="text/javascript" src="assets/static/bundle/js/bundle.js"></script>
 
@@ -884,14 +660,25 @@
 
   <!-- Custom Js -->
   <script src="assets/js/custom.js"></script>
+
   <script>
     $(document).ready(function () {
+      $('.deleteRecord').click(function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!"
+        })
+      })
       $('.js-datepicker').datepicker({
         autoClose: true,
         language: "en"
       });
     })
   </script>
+
 </body>
 
 </html>

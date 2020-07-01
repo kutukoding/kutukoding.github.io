@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Responseport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Schedule</title>
+  <title>Upgrade Plan</title>
 
   <style>
     #loader {
@@ -167,20 +167,31 @@
                 <a class='sidebar-link' href="cleaner.html">Cleaner</a>
               </li>
               <li>
-                <a class='sidebar-link' href="user.html">User</a>
+                <a class='sidebar-link' href="user.html">Pengguna</a>
               </li>
               <li>
                 <a class='sidebar-link' href="subscription.html">Subscription Plan</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item actived">
-            <a class='sidebar-link' href="schedule.html">
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
               </span>
-              <span class="title">Schedule</span>
+              <span class="title">Penjadwalan</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
             </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="set-penjadwalan.html">Atur Penjadwalan</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
@@ -200,7 +211,7 @@
                 <a class='sidebar-link' href="problem.html">Problem</a>
               </li>
               <li>
-                <a class='sidebar-link' href="complain.html">Complain</a>
+                <a class='sidebar-link' href="complain.html">Komplain</a>
               </li>
               <li>
                 <a class='sidebar-link' href="rating.html">Rating</a>
@@ -210,7 +221,7 @@
                 </li> -->
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown open">
             <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-user"></i>
@@ -222,9 +233,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class='sidebar-link' href="profile.html">My Profile</a>
+                <a class='sidebar-link' href="profile.html">Profile</a>
               </li>
-              <li>
+              <li class="actived">
                 <a class='sidebar-link' href="upgrade.html">Upgrade Plan</a>
               </li>
             </ul>
@@ -234,7 +245,7 @@
               <span class="icon-holder">
                 <i class="ti-power-off"></i>
               </span>
-              <span class="title">Logout</span>
+              <span class="title">Keluar</span>
             </a>
           </li>
           <!-- <li class="nav-item dropdown">
@@ -271,6 +282,11 @@
                 <i class="ti-menu"></i>
               </a>
             </li>
+            <li>
+              <a href="#">
+                <span class="logo-partner-text">Nikon Next</span>
+              </a>
+            </li>
             <!-- <li class="search-box">
               <a class="search-toggle no-pdd-right" href="javascript:void(0);">
                 <i class="search-icon ti-search pdd-right-10"></i>
@@ -291,7 +307,7 @@
               <ul class="dropdown-menu">
                 <li class="pX-20 pY-15 bdB">
                   <i class="ti-bell pR-10"></i>
-                  <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                  <span class="fsz-sm fw-600 c-grey-900">Notifikasi</span>
                 </li>
                 <li>
                   <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
@@ -350,7 +366,7 @@
                 </li>
                 <li class="pX-20 pY-15 ta-c bdT">
                   <span>
-                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">Lihat Semua Notifikasi <i class="ti-angle-right fsz-xs mL-10"></i></a>
                   </span>
                 </li>
               </ul>
@@ -381,7 +397,7 @@
                 <li>
                   <a href="index.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-power-off mR-10"></i>
-                    <span>Logout</span>
+                    <span>Keluar</span>
                   </a>
                 </li>
               </ul>
@@ -396,204 +412,159 @@
           <div class="container-fluid">
             <div class="main-content__header d-flex justify-content-between mT-10 mB-30">
               <div class="left-header d-flex align-items-center">
-                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Schedule</h4>
+                <h4 class="c-grey-900 border-right mr-3 pr-3 mb-0">Pembayaran</h4>
                 <nav aria-label="breadcrumb ml-3">
                   <ol class="breadcrumb breadcrumb--transparent mb-0 p-0">
                     <li class="breadcrumb-item"><a href="dashboard.html"><i class="ti-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Schedule</li>
+                    <li class="breadcrumb-item">Profile</li>
+                    <li class="breadcrumb-item aria-current=" page"><a href="upgrade.html">Upgrade Plan</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pembayaran</li>
                   </ol>
                 </nav>
               </div>
-              <div class="select2--custom">
-                <select id="toiletLocation" class="form-control js-select2" placeholder="Select City" style="width: 100%;">
-                  <option value="Toilet Block M">Toilet Block M</option>
-                  <option value="Toilet Block S">Toilet Block S</option>
-                  <option value="Toilet Mall MX Floor 1">Toilet Mall MX Floor 1</option>
-                  <option value="Toilet Mall MX Floor 3">Toilet Mall MX Floor 3</option>
-                  <option value="Toilet Mall Trans Studio Floor 1">Toilet Mall Trans Studio Floor 1</option>
-                  <option value="Toilet Mall Trans Studio Floor 3">Toilet Mall Trans Studio Floor 3</option>
-                </select>
-              </div>
             </div>
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-8">
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                  <form>
-                    <div class="form-group row">
-                      <label for="nameInput" class="col-sm-2 col-form-label">Select Location</label>
-                      <div class="col-sm-10">
-                        <div id="map"></div>
+                  <div class="form-group">
+                    <label for="kupon">Nomor Kupon</label>
+                    <input type="text" class="form-control" id="kupon">
+                  </div>
+                  <span class="mb-2 d-block">Metode Pembayaran :</span>
+                  <div class="accordion" id="accordionExample">
+                    <div class="card z-depth-0 bordered">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="OVO" checked>
+                            OVO
+                          </button>
+                        </h5>
                       </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="nameInput" class="col-sm-2 col-form-label">Name Toilet</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nameInput" disabled>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="addressInput" class="col-sm-2 col-form-label">Address Line</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="addressInput" disabled>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="cityInput" class="col-sm-4 col-form-label">City</label>
-                          <div class="col-sm-8">
-                            <div class="select2--custom">
-                              <select id="cityInput" class="form-control js-select2" placeholder="Select City" style="width: 100%;" disabled>
-                                <option value="Solved">Malang</option>
-                                <option value="Solved">Surabaya</option>
-                                <option value="Bandung">Bandung</option>
-                                <option value="Jakarta">Jakarta</option>
-                              </select>
-                            </div>
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <div>
+                            <span style="font-size: 17px; font-weight: bolder;">
+                              <strong>Pembayaran melalui OVO :</strong>
+                            </span>
+                            <br><br>
+                            <ol style="list-style: decimal; margin-left: 13px; line-height: 1.5em;padding-left: 5px;">
+                              <li>Buka aplikasi OVO</li>
+                              <li>Klik menu Transfer yang ada di halaman depan</li>
+                              <li>Masukkan nominal sesuai total tagihan</li>
+                              <li>Pilih transfer Antar OVO</li>
+                              <li>Masukkan nomor ponsel : 087482913746</li>
+                              <li>Klik Transfer</li>
+                              <li>Cek informasi yang ditampilkan apakah sudah sesuai, kemudian klik Konfirmasi</li>
+                              <li>Masukkan kode keamanan atau security code akun OVO Anda</li>
+                              <li>Akan muncul pemberitahuan di layar apabila transfer berhasil dilakukan.</li>
+                            </ol>
                           </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="floorInput" class="col-sm-4 col-form-label">Floor Number</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="floorInput" disabled>
-                          </div>
+                          <button class="btn btn-primary">Bayar Rp.90.000</button>
                         </div>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="longitude" class="col-sm-4 col-form-label">Longitude</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="longitude" disabled>
-                          </div>
-                        </div>
+                    <div class="card z-depth-0 bordered">
+                      <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="GO PAY">
+                            GO PAY
+                          </button>
+                        </h5>
                       </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label for="latitude" class="col-sm-4 col-form-label">Latitude</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="latitude" disabled>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <div>
+                            <span style="font-size: 17px; font-weight: bolder;">
+                              <strong>Pembayaran melalui GO PAY :</strong>
+                            </span>
+                            <br><br>
+                            <ol style="list-style: decimal; margin-left: 13px; line-height: 1.5em;padding-left: 5px;">
+                              <li>Buka aplikasi GO PAY</li>
+                              <li>Klik <strong>Bayar</strong> pada halaman utama aplikasi GO PAY</li>
+                              <li>Pada halaman <strong>Bayar</strong>,pilih menu nomor handphone</li>
+                              <li>Masukkan nomor ponsel : 087482913746</li>
+                              <li>Masukkan nominal sesuai total tagihan, lalu klik <strong>Konfirmasi</strong></li>
+                              <li>Klik Transfer</li>
+                              <li>Pilih Tema dan Tulis Pesan untuk penerima.</li>
+                              <li>Klik Bayar pada halaman Konfirmasi Transfer.</li>
+                              <li>Masukkan PIN GoPay kamu, kemudian transfer saldo GoPay kamu berhasil.</li>
+                              <li>Kamu akan mendapatkan notifikasi bahwa kamu telah berhasil melakukan transfer saldo GoPay kepada teman kamu</li>
+                            </ol>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="assigneInput" class="col-sm-2 col-form-label">Schedule</label>
-                      <div class="col-sm-10  select2--custom">
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <span>Day</span>
-                          </div>
-                          <div class="col-md-6">
-                            <span>Name Cleaner</span>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="monday" value="Monday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerMonday" name="nameCleanerMonday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="tuesday" value="Tuesday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerTuesday" name="nameCleanerTuesday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="wednesday" value="Wednesday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerWednesday" name="nameCleanerWednesday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="thursday" value="Thursday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerThursday" name="nameCleanerThursday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="friday" value="Friday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerFriday" name="nameCleanerFriday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="saturday" value="Saturday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerSaturday" name="nameCleanerSaturday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="sunday" value="Sunday" disabled>
-                          </div>
-                          <div class="col-md-6">
-                            <select id="nameCleanerSunday" name="nameCleanerSunday" class="form-control js-select2--asigne" multiple style="width: 100%;">
-                              <option value="Anita Bryant">https://randomuser.me/api/portraits/women/81.jpg | Anita Bryant</option>
-                              <option value="Carole Fuller">https://randomuser.me/api/portraits/women/84.jpg | Carole Fuller</option>
-                              <option value="Perry Murphy">https://randomuser.me/api/portraits/men/11.jpg | Perry Murphy</option>
-                          </select>
-                          </div>
+                          <button class="btn btn-primary">Bayar Rp.90.000</button>
                         </div>
                       </div>
                     </div>
-
-                    <div class="form-group row">
-                      <label for="statusInput" class="col-sm-2 col-form-label">Status</label>
-                      <div class="col-sm-10 d-flex align-items-center">
-                        <label class="switch mb-0">
-                          <input type="checkbox" checked>
-                          <span class="slider round"></span>
-                        </label>
-                        <span class="text-success ml-3">Active</span>
+                    <div class="card z-depth-0 bordered">
+                      <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <input class="form-check-input plan-checkbox" type="radio" name="payInput" value="Manual Transfer">
+                            Manual Transfer
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <div>
+                            <span style="font-size: 17px; font-weight: bolder;">
+                              <strong>Pembayaran melalui ATM :</strong>
+                            </span> <br><br>
+                            <ol style="list-style: decimal; margin-left: 13px; line-height: 1.5em;padding-left: 5px;">
+                              <li><strong>Catat kode pembayaran yang akan Anda dapat di akhir transaksi</strong>.</li>
+                              <li><strong>Gunakan ATM untuk menyelesaikan pembayaran</strong>.</li>
+                              <li>Pilih menu ‘<strong>Bayar/Beli</strong>’, lalu pilih <strong>‘Lainnya</strong>’, pilih ‘<strong>Lainnya</strong>’ kembali.</li>
+                              <li>Pilih ‘<strong>E-Commerce</strong>’.</li>
+                              <li>Masukkan kode institusi (<strong>70012</strong>).</li>
+                              <li>Masukkan kode pembayaran, lalu pilih ‘<strong>Benar</strong>’.</li>
+                              <li>Pastikan detail pembayaran Anda benar lalu Klik <strong>Total</strong>.</li>
+                              <li>Pembayaran Anda dengan Bill Payment selesai, mohon <strong>simpan struk untuk bukti pembayaran Anda</strong>.</li>
+                            </ol>
+                          </div>
+                          <button class="btn btn-primary">Bayar Rp.90.000</button>
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-                    </div>
-                  </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                  <h4 class="mb-3">Rincinan Transaksi</h4>
+                  <div class="d-flex justify-content-between p-3">
+                    <span>
+                      Upgrade Plan : <strong>Premium Plan</strong>
+                    </span>
+                    <span class="text-right">
+                      Rp.90.000
+                    </span>
+                  </div>
+                  <div class="d-flex justify-content-between p-3">
+                    <span>
+                      <strong>
+                        Subtotal
+                      </strong>
+                    </span>
+                    <span class="text-right">
+                      <strong>
+                        Rp.90.000
+                      </strong>
+                    </span>
+                  </div>
+                  <div class="d-flex justify-content-between p-3">
+                    <span>
+                      <strong>
+                        Jumlah Pembayaran
+                      </strong>
+                    </span>
+                    <span class="text-right">
+                      <strong>
+                        Rp.90.000
+                      </strong>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -640,44 +611,16 @@
   <script src="assets/js/custom.js"></script>
 
   <script>
-    function markerOnClick() {
-      var geocodeService = L.esri.Geocoding.geocodeService();
-      var nameToilet = this.getPopup()._content
-      geocodeService.reverse().latlng(this.getLatLng()).run(function (error, result) {
-        console.log(result)
-        document.getElementById('latitude').value = result.latlng.lat;
-        document.getElementById('longitude').value = result.latlng.lng;
-        document.getElementById('addressInput').value = result.address.Match_addr;
-        document.getElementById('nameInput').value = nameToilet;
-      })
-    }
     $(document).ready(function () {
-
-      // Map
-      var map = L.map('map').setView([-6.218205, 106.845002], 11);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-
-      L.marker([-6.218205, 106.845002]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Mangarai.')
-      L.marker([-6.216211, 106.844208]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Tebet.')
-      L.marker([-6.215507, 106.845978]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet SIN Herbal.')
-      L.marker([-6.181782, 106.894435]).on('click', markerOnClick).addTo(map).bindPopup('Mall Pulo Gadung.')
-      L.marker([-6.210907, 106.900198]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Jatinegara Kaum.')
-      L.marker([-6.160774, 106.762844]).on('click', markerOnClick).addTo(map).bindPopup('Mall Kedoya.')
-      L.marker([-6.246714, 106.710016]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Paninggilan.')
-
-      // JS for hide and show other fasilities input
-      $(".js-others-fasilities").change(function () {
-        if ($(".js-others-fasilities:checked").length) {
-          $(".js-others-input").slideDown();
-        } else {
-          $(".js-others-input").slideUp();
-        }
+      $('.deleteRecord').click(function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!"
+        })
       })
-
     })
   </script>
 

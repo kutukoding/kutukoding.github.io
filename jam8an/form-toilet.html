@@ -170,20 +170,31 @@
                 <a class='sidebar-link' href="cleaner.html">Cleaner</a>
               </li>
               <li>
-                <a class='sidebar-link' href="user.html">User</a>
+                <a class='sidebar-link' href="user.html">Pengguna</a>
               </li>
               <li>
                 <a class='sidebar-link' href="subscription.html">Subscription Plan</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class='sidebar-link' href="schedule.html">
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">
               <span class="icon-holder">
                 <i class="ti-calendar"></i>
               </span>
-              <span class="title">Schedule</span>
+              <span class="title">Penjadwalan</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
             </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class='sidebar-link' href="riwayat-penjadwalan.html">Riwayat Penjadwalan</a>
+              </li>
+              <li>
+                <a class='sidebar-link' href="set-penjadwalan.html">Atur Penjadwalan</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="javascript:void(0);">
@@ -203,7 +214,7 @@
                 <a class='sidebar-link' href="problem.html">Problem</a>
               </li>
               <li>
-                <a class='sidebar-link' href="complain.html">Complain</a>
+                <a class='sidebar-link' href="complain.html">Komplain</a>
               </li>
               <li>
                 <a class='sidebar-link' href="rating.html">Rating</a>
@@ -225,7 +236,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class='sidebar-link' href="profile.html">My Profile</a>
+                <a class='sidebar-link' href="profile.html">Profile</a>
               </li>
               <li>
                 <a class='sidebar-link' href="upgrade.html">Upgrade Plan</a>
@@ -237,7 +248,7 @@
               <span class="icon-holder">
                 <i class="ti-power-off"></i>
               </span>
-              <span class="title">Logout</span>
+              <span class="title">Keluar</span>
             </a>
           </li>
           <!-- <li class="nav-item dropdown">
@@ -274,6 +285,11 @@
                 <i class="ti-menu"></i>
               </a>
             </li>
+            <li>
+              <a href="#">
+                <span class="logo-partner-text">Nikon Next</span>
+              </a>
+            </li>
             <!-- <li class="search-box">
               <a class="search-toggle no-pdd-right" href="javascript:void(0);">
                 <i class="search-icon ti-search pdd-right-10"></i>
@@ -294,7 +310,7 @@
               <ul class="dropdown-menu">
                 <li class="pX-20 pY-15 bdB">
                   <i class="ti-bell pR-10"></i>
-                  <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+                  <span class="fsz-sm fw-600 c-grey-900">Notifikasi</span>
                 </li>
                 <li>
                   <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
@@ -353,7 +369,7 @@
                 </li>
                 <li class="pX-20 pY-15 ta-c bdT">
                   <span>
-                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications <i class="ti-angle-right fsz-xs mL-10"></i></a>
+                    <a href="" class="c-grey-600 cH-blue fsz-sm td-n">Lihat Semua Notifikasi <i class="ti-angle-right fsz-xs mL-10"></i></a>
                   </span>
                 </li>
               </ul>
@@ -384,7 +400,7 @@
                 <li>
                   <a href="index.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                     <i class="ti-power-off mR-10"></i>
-                    <span>Logout</span>
+                    <span>Keluar</span>
                   </a>
                 </li>
               </ul>
@@ -565,64 +581,122 @@
                     </div>
                     <div class="row setup-content" id="step-3" style="width: 100%; max-width: 100%; margin:0">
                       <div class="col-md-12">
-                        <div class="form-row">
-                          <div class="form-group col-md-3">
-                            <label for="totalJetWasher">Jumlah Jet Washer (Semprotan)</label>
-                            <input type="text" class="form-control" id="totalJetWasher">
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalJetWasher">Jumlah Jet Washer (Semprotan)</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalJetWasher">
+                              </div>
+                            </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalGantungan">Jumlah Gantungan</label>
-                            <input type="text" class="form-control" id="totalGantungan">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalSabun">Jumlah Sabun Cuci Tangan</label>
-                            <input type="text" class="form-control" id="totalSabun">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalPembersih">Jumlah Alat / Cairan Pembersih</label>
-                            <input type="text" class="form-control" id="totalPembersih">
-                          </div>
-                        </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-3">
-                            <label for="totalTempatSampah">Jumlah Tempat Sampah</label>
-                            <input type="text" class="form-control" id="totalTempatSampah">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalCermin">Jumlah Cermin Pada Toilet</label>
-                            <input type="text" class="form-control" id="totalCermin">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalTempatCuciTangan">Jumlah Tempat Cuci Tangan</label>
-                            <input type="text" class="form-control" id="totalTempatCuciTangan">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalPintuKloset">Jumlah Pintu Pada Kloset</label>
-                            <input type="text" class="form-control" id="totalPintuKloset">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalGantungan">Jumlah Gantungan</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalGantungan">
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-3">
-                            <label for="totalPintuMasuk">Jumlah Pintu Akses Masuk</label>
-                            <input type="text" class="form-control" id="totalPintuMasuk">
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalSabun">Jumlah Sabun Cuci Tangan</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalSabun">
+                              </div>
+                            </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalKlosetTersumbat">Jumlah Kloset Tersumbat</label>
-                            <input type="text" class="form-control" id="totalKlosetTersumbat">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalKlosetDuduk">Jumlah Kloset Duduk</label>
-                            <input type="text" class="form-control" id="totalKlosetDuduk">
-                          </div>
-                          <div class="form-group col-md-3">
-                            <label for="totalKlosetJongkok">Jumlah Kloset Jongkok</label>
-                            <input type="text" class="form-control" id="totalKlosetJongkok">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalPembersih">Jumlah Alat / Cairan Pembersih</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalPembersih">  
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-3">
-                            <label for="totalStikerEdukasi">Jumlah Stiker Edukasi Terpasang</label>
-                            <input type="text" class="form-control" id="totalStikerEdukasi">
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalTempatSampah">Jumlah Tempat Sampah</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalTempatSampah">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalCermin">Jumlah Cermin Pada Toilet</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalCermin">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalTempatCuciTangan">Jumlah Tempat Cuci Tangan</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalTempatCuciTangan">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalPintuKloset">Jumlah Pintu Pada Kloset</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalPintuKloset">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalPintuMasuk">Jumlah Pintu Akses Masuk</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalPintuMasuk">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalKlosetTersumbat">Jumlah Kloset Tersumbat</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalKlosetTersumbat">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalKlosetDuduk">Jumlah Kloset Duduk</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalKlosetDuduk">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalKlosetJongkok">Jumlah Kloset Jongkok</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalKlosetJongkok">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <label class="col-sm-4" for="totalStikerEdukasi">Jumlah Stiker Edukasi Terpasang</label>
+                              <div class="col-sm-8">
+                                <input type="number" class="form-control" id="totalStikerEdukasi">
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <button class="btn btn-primary nextBtn pull-right mt-3" type="button">Next</button>
@@ -630,9 +704,9 @@
                     </div>
                     <div class="row setup-content" id="step-4" style="width: 100%; max-width: 100%; margin:0">
                       <div class="col-md-12">
-                        <div class="form-row">
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Apakah Toilet Memiliki Gayung</label>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Apakah Toilet Memiliki Gayung</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Tidak</span>
                               <label class="switch mb-0">
@@ -642,8 +716,10 @@
                               <span class="text-success ml-3">Ya</span>
                             </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Apakah Toilet Memiliki Gayung</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Ketersediaan Air Pada Toilet</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Tidak</span>
                               <label class="switch mb-0">
@@ -653,19 +729,23 @@
                               <span class="text-success ml-3">Ada</span>
                             </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Kondisi Air Pada Toilet</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Kondisi Air Pada Toilet</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Keruh</span>
                               <label class="switch mb-0">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                               </label>
-                              <span class="text-success ml-3">Bersih</span>
+                              <span class="text-success ml-3">Jernih</span>
                             </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Aroma Toilet</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Aroma Toilet</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Berbau</span>
                               <label class="switch mb-0">
@@ -676,9 +756,9 @@
                             </div>
                           </div>
                         </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Kondisi Toilet</label>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Kondisi Toilet</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Basah</span>
                               <label class="switch mb-0">
@@ -688,8 +768,10 @@
                               <span class="text-success ml-3">Kering</span>
                             </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Apakah Ada Toilet Tersumbat</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Apakah Ada Toilet Tersumbat</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Tidak</span>
                               <label class="switch mb-0">
@@ -699,8 +781,10 @@
                               <span class="text-success ml-3">Ada</span>
                             </div>
                           </div>
-                          <div class="form-group col-md-3">
-                            <label for="statusInput" class="col-form-label">Apakah Tombol Flush/Siram Terpisah</label>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Apakah Tombol Flush/Siram Terpisah</label>
+                          <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                               <span class="mr-3">Tidak</span>
                               <label class="switch mb-0">
@@ -711,7 +795,7 @@
                             </div>
                           </div>
                         </div>
-                        <button class="btn btn-primary pull-right" type="submit">Submit</button>
+                        <button class="btn btn-primary pull-right" type="submit">Simpan</button>
                       </div>
                     </div>
                   </form>
@@ -762,6 +846,19 @@
   <script src="assets/js/custom.js"></script>
 
   <script>
+    Dropzone.autoDiscover = false;
+      
+    $('.dropzone').each(function () {
+      var options = $(this).attr('id').split('-');
+      var dropUrl = '/upload/' + options[1];
+      console.log(dropUrl)
+      $(this).dropzone({
+        url: dropUrl,
+        dictDefaultMessage: "Drop File atau Klik untuk mengupload Gambar"
+        // Rest of the configuration equal to all dropzones
+      });
+    })
+    
     var navListItems = $('div.setup-panel div a'),
       allWells = $('.setup-content'),
       allNextBtn = $('.nextBtn');
@@ -819,8 +916,6 @@
           }).then((result) => {
             if (!result.isConfirmed) {
               $("#nameInput").val("")
-            } else {
-              $('#floorInput').focus();
             }
           })
         }
@@ -968,26 +1063,19 @@
         e.preventDefault();
         Swal.fire({
           title: "Jadwal toilet belum di set",
-          text: "Apakah anda ingin mengatur jadwal sekarang?",
+          text: "Apakah anda ingin mengatur Penjadwalan sekarang?",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonText: "Ya",
           cancelButtonText: "Tidak"
-        }).then(() => {
-          window.location = `${window.location.hostname}/jam8an/schedule.html`;
+        }).then((result) => {
+          console.log(result.isConfirmed)
+          if (result.isConfirmed) {
+            window.location = `set-penjadwalan.html`;
+          } else {
+            window.location = `toilet.html`;
+          }
         })
-      })
-
-      Dropzone.autoDiscover = false;
-      
-      $('.dropzone').each(function () {
-        var options = $(this).attr('id').split('-');
-        var dropUrl = '/upload/' + options[1];
-        $(this).dropzone({
-          url: dropUrl,
-          dictDefaultMessage: "Drop File atau Klik untuk mengupload Gambar"
-          // Rest of the configuration equal to all dropzones
-        });
       })
     })
   </script>
