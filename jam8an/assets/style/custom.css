@@ -485,6 +485,37 @@
     height: 43px;
     margin: 11px 0;
     display: block;
+    color: #00CAE8;
+}
+
+.logo-header h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 27px;
+    line-height: 1em;
+    margin-bottom: 7px;
+    display: block;
+}
+
+.logo-header span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    display: block;
+}
+
+.signin-logo h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 48px;
+    line-height: 1em;
+    margin-bottom: 0;
+    display: block;
+    text-align: center;
+}
+.signin-logo span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    display: block;
 }
 
 .logo-mini {
