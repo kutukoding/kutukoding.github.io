@@ -797,6 +797,9 @@ input[type="file"] {
 
 /* ---- RESPONSIVE ----- */
 @media screen and (max-width: 767px) {
+    .header .nav-left a {
+        padding-right: 0 !important;
+    }
     .flex-sm-column {
         flex-direction: column !important;
     }
@@ -935,7 +938,7 @@ input[type="file"] {
     }
 
     .header .nav-left a {
-        padding: 0 !important;
+        padding-right: 0;
         padding-left: 10px !important;
     }
 }
