@@ -727,6 +727,10 @@
     max-height: 66px;
 }
 
+.sidebar {
+    z-index: 1040 !important;
+}
+
 input[type="file"] {
     display: none;
 }
@@ -888,7 +892,7 @@ input[type="file"] {
 
     /* ----- Login ----- */
     .bg-signin {
-        max-height: 100px;
+        max-height: 330px;
         overflow: hidden;
     }
 
@@ -904,7 +908,24 @@ input[type="file"] {
         height: 60px;
     }
 
-    .signin-logo {
-        width: 160px;
+    .signup div:last-child > div {
+        max-width: 350px;
+    }
+
+    .logo-partner-text {
+        font-size: 16px;
+    }
+    
+}
+
+/* ---- RESPONSIVE ----- */
+@media screen and (max-width: 320px) {
+    .logo-partner-text {
+        font-size: 13px;
+    }
+
+    .header .nav-left a {
+        padding: 0 !important;
+        padding-left: 10px !important;
     }
 }
