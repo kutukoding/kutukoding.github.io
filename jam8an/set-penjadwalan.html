@@ -78,6 +78,9 @@
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css" integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g==" crossorigin="">
 
+  <!-- Leaflet Search -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.8/dist/leaflet-search.min.css">
+
   <!-- Air Datepicker CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet">
 
@@ -467,7 +470,7 @@
                         <div class="mb-3 js-penjadwalan" data-urutan="1">
                           <button type="button" class="col-sm-3 btn btn-success w-100 js-tambah-tanggal">
                             <i class="ti-plus mr-1"></i>
-                             Tambah Tanggal
+                            Tambah Tanggal
                           </button>
                         </div>
                         <ul class="table--jadwal">
@@ -596,6 +599,9 @@
   <!-- Load Plugin Esri Leaflet Geocoder map from CDN -->
   <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js" integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA==" crossorigin=""></script>
 
+  <!-- Leaflet Search -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.8/dist/leaflet-search.src.js"></script>
+
   <!-- Air Datepicker -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
@@ -614,21 +620,67 @@
     }
     $(document).ready(function () {
 
+      var data = [{
+          "loc": [-6.218205, 106.845002],
+          "title": "Public Toilet Mangarai"
+        },
+        {
+          "loc": [-6.216211, 106.844208],
+          "title": "Public Toilet Tebet"
+        },
+        {
+          "loc": [-6.215507, 106.845978],
+          "title": "Public Toilet SIN Herbal"
+        },
+        {
+          "loc": [-6.181782, 106.894435],
+          "title": "Mall Pulo Gadung"
+        },
+        {
+          "loc": [-6.210907, 106.900198],
+          "title": "Public Toilet Jatinegara Kaum"
+        },
+        {
+          "loc": [-6.160774, 106.762844],
+          "title": "Mall Kedoya"
+        },
+        {
+          "loc": [-6.246714, 106.710016],
+          "title": "Public Toilet Paninggilan"
+        },
+      ];
+
       // Map
-      var map = L.map('map').setView([-6.218205, 106.845002], 11);
+      var map = new L.Map('map', {
+        zoom: 11,
+        center: new L.latLng(data[0].loc)
+      });
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
+      map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
 
+      var markersLayer = new L.LayerGroup(); //layer contain searched elements
 
-      L.marker([-6.218205, 106.845002]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Mangarai.')
-      L.marker([-6.216211, 106.844208]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Tebet.')
-      L.marker([-6.215507, 106.845978]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet SIN Herbal.')
-      L.marker([-6.181782, 106.894435]).on('click', markerOnClick).addTo(map).bindPopup('Mall Pulo Gadung.')
-      L.marker([-6.210907, 106.900198]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Jatinegara Kaum.')
-      L.marker([-6.160774, 106.762844]).on('click', markerOnClick).addTo(map).bindPopup('Mall Kedoya.')
-      L.marker([-6.246714, 106.710016]).on('click', markerOnClick).addTo(map).bindPopup('Public Toilet Paninggilan.')
+      map.addLayer(markersLayer);
+
+      var controlSearch = new L.Control.Search({
+        layer: markersLayer,
+        initial: false,
+        zoom: 14
+      });
+
+      map.addControl(controlSearch);
+
+      ////////////populate map with markers from sample data
+      for (i in data) {
+        var title = data[i].title, //value searched
+          loc = data[i].loc, //position found
+          marker = new L.Marker(new L.latLng(loc), {
+            title: title
+          }); //se property searched
+        marker.on('click', markerOnClick);
+        marker.bindPopup(title);
+        markersLayer.addLayer(marker);
+      }
 
       // JS for hide and show other fasilities input
       $(".js-others-fasilities").change(function () {
@@ -638,11 +690,20 @@
           $(".js-others-input").slideUp();
         }
       })
+
+      $('#searchtext9').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) { 
+          e.preventDefault();
+          return false;
+        }
+      });
+
       $('.js-datepicker').datepicker({
         autoClose: true,
         language: "en"
       }).data('datepicker').selectDate(new Date());
-      $(".js-tambah-tanggal").click(function() {
+      $(".js-tambah-tanggal").click(function () {
         $(this).closest(".js-penjadwalan").data("urutan", $(this).closest(".js-penjadwalan").data("urutan") + 1);
         const rowNumber = $(this).closest(".js-penjadwalan").data("urutan");
         let domRow = `
@@ -683,10 +744,10 @@
         </li>`;
         $(".table--jadwal").append(domRow)
         $('.table--jadwal .js-select2--asigne').select2({
-        templateSelection: function (data) {
-          var r = data.text.split('|');
-          var $result = $(
-            `
+          templateSelection: function (data) {
+            var r = data.text.split('|');
+            var $result = $(
+              `
           <div class="avatar-select2-selected">
             <div class="avatar-select2-selected__image">
               <img src="${r[0]}" alt="${r[1]}">
@@ -694,13 +755,13 @@
             <span class="avatar-select2-selected__name">${r[1]}</span>
           </div>
           `
-          );
-          return $result;
-        },
-        templateResult: function (data) {
-          var r = data.text.split('|');
-          var $result = $(
-            `
+            );
+            return $result;
+          },
+          templateResult: function (data) {
+            var r = data.text.split('|');
+            var $result = $(
+              `
           <div class="row">
             <div class="col-md-1">
               <div class="avatar-select2">
@@ -710,10 +771,10 @@
             <div class="col-md-11 d-flex align-items-center"> ${r[1]} </div>
           </div>
           `
-          );
-          return $result;
-        }
-      });
+            );
+            return $result;
+          }
+        });
         $('.js-datepicker').datepicker({
           autoClose: true,
           language: "en"

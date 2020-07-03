@@ -763,6 +763,16 @@ input[type="file"] {
     background-color: #00CAE8 !important;
 }
 
+.leaflet-control-search .search-button {
+    width: 23px;
+    height: 23px;
+    background-size: 15px !important;
+}
+
+.leaflet-control-search .search-button:hover {
+    background-position: 4px 4px !important;
+}
+
 @media screen and (min-width: 576px) {
     .modal-dialog {
         max-width: 700px !important;
