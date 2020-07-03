@@ -668,7 +668,12 @@
         zoom: 14
       });
 
+      controlSearch.on('search:locationfound', function(event) {
+        event.layer.openPopup();
+      });
+
       map.addControl(controlSearch);
+
 
       ////////////populate map with markers from sample data
       for (i in data) {
@@ -691,6 +696,8 @@
         }
       })
 
+
+      // disable search submit on set schedule
       $('#searchtext9').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) { 
